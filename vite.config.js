@@ -10,13 +10,22 @@ const __dirname = dirname(__filename)
 export default defineConfig({
   plugins: [react()],
   base: './',
+  publicDir: 'public',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    emptyOutDir: true,
     rollupOptions: {
       output: {
-        assetFileNames: 'assets/[name]-[hash][extname]',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
         chunkFileNames: 'js/[name]-[hash].js',
         entryFileNames: 'js/[name]-[hash].js',
       }
@@ -24,10 +33,10 @@ export default defineConfig({
     assetsInlineLimit: 4096
   },
   resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-      '@assets': resolve(__dirname, './public/assets')
-    }
+    alias: [
+      { find: '@', replacement: resolve(__dirname, 'src') },
+      { find: '@assets', replacement: resolve(__dirname, 'public/assets') }
+    ]
   },
   server: {
     host: '0.0.0.0',

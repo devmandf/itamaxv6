@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// Import des images locales
-import banqueMondiale from '/assets/images/banque-mondiale.webp';
-import ua from '/assets/images/ua.webp';
-import hopitalMbour from '/assets/images/hopital-mbour.webp';
-import villaOceane from '/assets/images/villa-océane.webp';
+// Import des images locales depuis le dossier public
+const banqueMondiale = '/assets/images/world-bank-logo.webp';
+const ua = '/assets/images/ua.webp';
+const hopitalMbour = '/assets/images/hopital-mbour.webp';
+const villaOceane = '/assets/images/villa-océane.webp';
 
 const projects = {
   all: [
