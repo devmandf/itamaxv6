@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles globaux pour empêcher le défilement horizontal */
+@layer base {
+  html, body {
+    @apply w-full max-w-full overflow-x-hidden;
+  }
+  
+  body {
+    @apply relative;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-gray-700 hover:text-blue-500 transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
