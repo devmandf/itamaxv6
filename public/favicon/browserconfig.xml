@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="/favicon/mstile-70x70.png"/>
+            <square150x150logo src="/favicon/mstile-150x150.png"/>
+            <square310x310logo src="/favicon/mstile-310x310.png"/>
+            <TileColor>#ffffff</TileColor>
+        </tile>
+        <notification>
+            <polling-uri src="/favicon/notifications/polling"/>
+            <polling-uri2 src="/favicon/notifications/polling2"/>
+            <polling-uri3 src="/favicon/notifications/polling3"/>
+            <polling-uri4 src="/favicon/notifications/polling4"/>
+            <polling-uri5 src="/favicon/notifications/polling5"/>
+            <frequency>30</frequency>
+            <cycle>1</cycle>
+            <visits>
+                <action>play</action>
+                <action>display</action>
+            </visits>
+        </notification>
+    </msapplication>
+</browserconfig>
