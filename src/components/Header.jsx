@@ -55,7 +55,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-5">
               <img 
-                src="/public/assets/images/itamax-logo-header.svg" 
+                src="/assets/images/itamax-logo-header.svg" 
                 alt="Logo Itamax" 
                 className="h-6 w-auto"
               />
