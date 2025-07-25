@@ -1,37 +1,45 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
+      }
+    },
+    assetsInlineLimit: 4096
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+      '@assets': resolve(__dirname, './public/assets')
+    }
   },
   server: {
-    host: '0.0.0.0', // Permet les connexions depuis toutes les interfaces réseau
-    port: 5173, // Port fixe pour plus de facilité
-    strictPort: true, // N'essaye pas de trouver un autre port si celui-ci est occupé
-    open: false, // Ne pas ouvrir automatiquement le navigateur
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    open: false,
     hmr: {
       host: 'localhost',
       protocol: 'ws',
     },
-    // Configuration pour le routage côté client avec React Router
     historyApiFallback: true,
-    // Configuration pour le proxy si nécessaire
-    proxy: {
-      // Exemple de configuration de proxy si nécessaire
-      // '/api': {
-      //   target: 'http://localhost:3000',
-      //   changeOrigin: true,
-      //   secure: false,
-      // },
-    },
   },
-  // Amélioration des performances pour le développement
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
   },

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+// Import des images locales
+import banqueMondiale from '/assets/images/banque-mondiale.webp';
+import ua from '/assets/images/ua.webp';
+import hopitalMbour from '/assets/images/hopital-mbour.webp';
+import villaOceane from '/assets/images/villa-océane.webp';
+
 const projects = {
   all: [
     {
@@ -8,21 +14,21 @@ const projects = {
       title: 'Siège de la Banque Mondiale, Dakar',
       category: 'institutionnel',
       description: 'Un bâtiment emblématique pour la Banque Mondiale au Sénégal.',
-      image: '/assets/images/pexels-pixabay-159045.webp',
+      image: banqueMondiale,
     },
     {
       id: 2,
-      title: 'Centre de Conférences de l\'Union Africaine',
+      title: "Centre de Conférences de l'Union Africaine",
       category: 'institutionnel',
       description: 'Un centre de conférences ultramoderne pour l\'UA.',
-      image: '/assets/images/ua.webp',
+      image: ua,
     },
     {
       id: 3,
       title: 'Hôpital Régional, Mbour',
       category: 'public',
       description: 'Un hôpital moderne desservant la région de Mbour.',
-      image: '/assets/images/hopital-mbour.webp',
+      image: hopitalMbour,
     },
     {
       id: 4,
@@ -43,7 +49,7 @@ const projects = {
       title: 'Villa Océane',
       category: 'particulier',
       description: 'Une villa contemporaine avec piscine à Saly.',
-      image: '/assets/images/villa-océane.webp',
+      image: villaOceane,
     },
   ],
   institutionnel: [],
