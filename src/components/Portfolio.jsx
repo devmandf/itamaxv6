@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 // Import des images locales depuis le dossier public
-const banqueMondiale = '/assets/images/world-bank-logo.webp';
+const banqueMondiale = '/assets/images/banqueMondiale.webp';
 const ua = '/assets/images/ua.webp';
 const hopitalMbour = '/assets/images/hopital-mbour.webp';
 const villaOceane = '/assets/images/villa-océane.webp';
