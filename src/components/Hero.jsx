@@ -37,7 +37,8 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="text-left pl-8 border-l-4 border-blue-500 mb-12">
+        <div className="text-left pl-8 mb-12 relative">
+          <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, rgba(67, 82, 235, 1), transparent)' }}></div>
           <motion.h1 
             className="text-6xl md:text-8xl lg:text-9xl font-['Jura'] font-bold leading-none tracking-tight"
             variants={itemVariants}
@@ -46,7 +47,8 @@ const Hero = () => {
           </motion.h1>
           
           <motion.div 
-            className="mt-2 h-1.5 bg-gradient-to-r from-blue-500 to-transparent w-48"
+            className="mt-2 h-1.5 w-48"
+            style={{ background: 'linear-gradient(to right, rgba(67, 82, 235, 1), transparent)' }}
             variants={itemVariants}
           />
         </div>
@@ -70,7 +72,7 @@ const Hero = () => {
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             Spécialisé dans les infrastructures publiques et institutionnelles
-            <span className="block text-blue-300 font-medium">de grande envergure à travers l'Afrique</span>
+            <span className="block font-medium" style={{ color: 'rgba(67, 82, 235, 1)' }}>de grande envergure à travers l'Afrique</span>
           </motion.p>
         </motion.div>
 

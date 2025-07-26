@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
+// Composant de lien de navigation avec effet de ligne animée
+const NavLink = ({ href, children, onClick, className = '' }) => (
+  <a 
+    href={href} 
+    onClick={onClick}
+    className={`relative group ${className}`}
+  >
+    {children}
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+  </a>
+);
+
 // =============================================
 // COMPOSANT HEADER - NE PAS MODIFIER SANS VALIDATION
 // =============================================
@@ -59,7 +71,7 @@ const Header = () => {
                 alt="Logo Itamax" 
                 className="h-6 w-auto"
               />
-              <span className="text-2xl font-bold ml-6 -mt-0.75" style={{ color: 'rgba(34, 67, 162, 1)' }}>itamax</span>
+              <span className="text-2xl font-bold ml-6 -mt-0.75 uppercase" style={{ color: 'rgba(67, 82, 235, 1)' }}>itamax</span>
             </div>
             
             <nav className="hidden md:block">
@@ -113,11 +125,51 @@ const Header = () => {
           </div>
           <nav>
             <ul className="space-y-4">
-              <li><a href="#about" onClick={closeMenu} className="block py-2 text-lg text-gray-700 hover:text-blue-700 transition-colors font-['Jura'] font-semibold">À Propos</a></li>
-              <li><a href="#projects" onClick={closeMenu} className="block py-2 text-lg text-gray-700 hover:text-blue-700 transition-colors font-['Jura'] font-semibold">Projets</a></li>
-              <li><a href="#services" onClick={closeMenu} className="block py-2 text-lg text-gray-700 hover:text-blue-700 transition-colors font-['Jura'] font-semibold">Services</a></li>
-              <li><a href="#portfolio" onClick={closeMenu} className="block py-2 text-lg text-gray-700 hover:text-blue-700 transition-colors font-['Jura'] font-semibold">Portfolio</a></li>
-              <li><a href="#contact" onClick={closeMenu} className="block py-2 text-lg text-gray-700 hover:text-blue-700 transition-colors font-['Jura'] font-semibold">Contact</a></li>
+              <li>
+                <NavLink 
+                  href="#about" 
+                  onClick={closeMenu} 
+                  className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
+                >
+                  À Propos
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  href="#projects" 
+                  onClick={closeMenu} 
+                  className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
+                >
+                  Projets
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  href="#services" 
+                  onClick={closeMenu} 
+                  className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
+                >
+                  Services
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  href="#portfolio" 
+                  onClick={closeMenu} 
+                  className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
+                >
+                  Portfolio
+                </NavLink>
+              </li>
+              <li>
+                <NavLink 
+                  href="#contact" 
+                  onClick={closeMenu} 
+                  className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
+                >
+                  Contact
+                </NavLink>
+              </li>
             </ul>
           </nav>
         </div>
