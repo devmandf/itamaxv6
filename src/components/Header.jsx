@@ -71,7 +71,7 @@ const Header = () => {
                 alt="Logo Itamax" 
                 className="h-6 w-auto"
               />
-              <span className="text-2xl font-bold ml-6 -mt-0.75 uppercase" style={{ color: 'rgba(67, 82, 235, 1)' }}>itamax</span>
+              <span className="text-2xl font-bold ml-1 -mt-0.75 uppercase" style={{ color: 'rgba(67, 82, 235, 1)' }}>itamax</span>
             </div>
             
             <nav className="hidden md:block">
