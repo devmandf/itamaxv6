@@ -24,37 +24,50 @@ const ContactForm = () => {
       alert('Veuillez remplir tous les champs obligatoires.');
       return false;
     }
-    
-    // Récupérer l'URL actuelle pour la redirection
-    const currentUrl = window.location.origin;
+
+    // Afficher un indicateur de chargement
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Envoi en cours...';
     
     try {
-      // Créer un formulaire dynamiquement
-      const form = e.target;
-      const formDataToSend = new FormData(form);
-      
-      // Mettre à jour l'URL de redirection avec l'URL actuelle
-      formDataToSend.set('_next', `${currentUrl}/merci`);
-      
-      // Envoyer les données à FormSubmit
-      const response = await fetch('https://formsubmit.co/ajax/vlamidronbaltazar@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/af322563b671f37c1a88e7c60bfe6c90', {
         method: 'POST',
-        body: formDataToSend,
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Non fourni',
+          subject: formData.subject || 'Sans objet',
+          message: formData.message,
+          _subject: 'Nouveau message depuis le site itamax.tech',
+          _template: 'table',
+          _captcha: 'false',
+          _honey: '' // Champ honeypot vide
+        })
       });
       
       const result = await response.json();
       
       if (response.ok) {
         alert('Message envoyé avec succès ! Nous vous recontacterons bientôt.');
-        form.reset();
-        // Optionnel : Rediriger vers la page de remerciement
-        // window.location.href = `${currentUrl}/merci`;
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
         throw new Error(result.message || 'Une erreur est survenue');
       }
     } catch (error) {
       console.error('Erreur:', error);
-      alert('Une erreur est survenue. Veuillez réessayer.');
+      alert('Une erreur est survenue. Veuillez réessayer plus tard.');
+    } finally {
+      // Réactiver le bouton dans tous les cas
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
     }
   };
 
@@ -87,14 +100,13 @@ const ContactForm = () => {
             <form 
               onSubmit={handleSubmit} 
               className="space-y-5"
-              method="POST"
             >
               {/* Configuration FormSubmit */}
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{display: 'none'}} />
-              <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous recontacterons dès que possible." />
               <input type="hidden" name="_subject" value="Nouveau message depuis le site itamax.tech" />
+              <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous recontacterons dès que possible." />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>
