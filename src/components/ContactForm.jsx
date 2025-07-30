@@ -17,17 +17,45 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.message) {
       alert('Veuillez remplir tous les champs obligatoires.');
-      return;
+      return false;
     }
     
-    // La soumission se fera via l'attribut 'action' du formulaire
-    // Cette fonction est juste pour la validation
-    return true;
+    // Récupérer l'URL actuelle pour la redirection
+    const currentUrl = window.location.origin;
+    
+    try {
+      // Créer un formulaire dynamiquement
+      const form = e.target;
+      const formDataToSend = new FormData(form);
+      
+      // Mettre à jour l'URL de redirection avec l'URL actuelle
+      formDataToSend.set('_next', `${currentUrl}/merci`);
+      
+      // Envoyer les données à FormSubmit
+      const response = await fetch('https://formsubmit.co/ajax/vlamidronbaltazar@gmail.com', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        alert('Message envoyé avec succès ! Nous vous recontacterons bientôt.');
+        form.reset();
+        // Optionnel : Rediriger vers la page de remerciement
+        // window.location.href = `${currentUrl}/merci`;
+      } else {
+        throw new Error(result.message || 'Une erreur est survenue');
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Une erreur est survenue. Veuillez réessayer.');
+    }
   };
 
   return (
@@ -59,12 +87,10 @@ const ContactForm = () => {
             <form 
               onSubmit={handleSubmit} 
               className="space-y-5"
-              action="https://formsubmit.co/vlamidronbaltazar@gmail.com" 
               method="POST"
             >
               {/* Configuration FormSubmit */}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://itamax.tech/merci" />
               <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{display: 'none'}} />
               <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous recontacterons dès que possible." />
