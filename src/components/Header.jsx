@@ -98,9 +98,9 @@ const Header = () => {
                 aria-label="Menu"
               >
                 <div className={`w-6 flex flex-col space-y-1.5 transition-all duration-300 ${isMenuOpen ? 'transform rotate-180' : ''}`}>
-                  <span className={`block h-0.5 transition-all duration-300 ${isMenuOpen ? 'w-6 transform rotate-45 translate-y-2' : 'w-6'}`} style={{ backgroundColor: 'rgba(34, 67, 162, 1)' }}></span>
-                  <span className={`block h-0.5 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100 w-6'}`} style={{ backgroundColor: 'rgba(34, 67, 162, 1)' }}></span>
-                  <span className={`block h-0.5 transition-all duration-300 ${isMenuOpen ? 'w-6 transform -rotate-45 -translate-y-2' : 'w-6'}`} style={{ backgroundColor: 'rgba(34, 67, 162, 1)' }}></span>
+                  <span className={`block h-0.5 transition-all duration-300 ${isMenuOpen ? 'w-6 transform rotate-45 translate-y-2' : 'w-6'}`} style={{ backgroundColor: 'rgba(67, 82, 235, 1)' }}></span>
+                  <span className={`block h-0.5 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100 w-6'}`} style={{ backgroundColor: 'rgba(67, 82, 235, 1)' }}></span>
+                  <span className={`block h-0.5 transition-all duration-300 ${isMenuOpen ? 'w-6 transform -rotate-45 -translate-y-2' : 'w-6'}`} style={{ backgroundColor: 'rgba(67, 82, 235, 1)' }}></span>
                 </div>
               </button>
             </div>
