@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import ImageModal from './ImageModal';
 
 // Import des images locales depuis le dossier public
 const kananga = '/assets/images/projet-BM-Kinshasa.webp';
@@ -68,6 +69,19 @@ projects.particulier = projects.all.filter(project => project.category === 'part
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Délai pour permettre l'animation de fermeture avant de réinitialiser
+    setTimeout(() => setSelectedProject(null), 300);
+  };
   const [portfolioItems, setPortfolioItems] = useState(projects.all);
 
   const handleFilterClick = (filter) => {
@@ -123,22 +137,38 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+              onClick={() => openModal(project)}
             >
-              <div className="h-64 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="bg-white/90 text-blue-600 px-4 py-2 rounded-full font-medium">
+                    Voir en grand
+                  </span>
+                </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
-                <p className="text-gray-600">{project.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 line-clamp-2">{project.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
+        
+        {/* Modal d'image */}
+        <ImageModal 
+          isOpen={isModalOpen} 
+          onClose={closeModal} 
+          project={selectedProject} 
+        />
       </div>
     </section>
   );

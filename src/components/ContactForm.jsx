@@ -17,13 +17,41 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      alert('Merci pour votre message. Nous vous recontacterons bientôt !');
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    } else {
+    
+    if (!formData.name || !formData.email || !formData.message) {
       alert('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+    
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/vlamidronbaltazar@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Non fourni',
+          subject: formData.subject || 'Sans objet',
+          message: formData.message
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        alert('Message envoyé avec succès ! Nous vous recontacterons bientôt.');
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        throw new Error(result.message || 'Une erreur est survenue lors de l\'envoi du message.');
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer plus tard.');
     }
   };
 
@@ -53,7 +81,17 @@ const ContactForm = () => {
             className="bg-white p-8 rounded-xl shadow-lg"
           >
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Envoyez-nous un message</h3>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form 
+              onSubmit={handleSubmit} 
+              className="space-y-5"
+              action="https://formsubmit.co/vlamidronbaltazar@gmail.com" 
+              method="POST"
+            >
+              {/* Ajout d'un token pour éviter le spam */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="http://localhost:3000/merci" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_honey" style={{display: 'none'}} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>

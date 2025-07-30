@@ -44,7 +44,7 @@ const About = () => {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500 w-full max-w-xl mx-auto">
               <img 
-                src="/assets/images/pexels-about-architecture.webp" 
+                src="/assets/images/imagine.webp" 
                 alt="Projet architectural Itamax"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: '550px' }}
@@ -64,7 +64,7 @@ const About = () => {
               Notre Vision
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Redéfinir l'architecture <span className="text-blue-600">africaine</span>
+            L'innovation architecturale<span className="text-blue-600"> au service de l'Afrique</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Chez ITAMAX, nous ne concevons pas que des bâtiments. Nous façonnons des espaces qui inspirent, transforment et élèvent les communautés à travers l'Afrique. Notre approche allie esthétique audacieuse et fonctionnalité optimale, tout en respectant notre engagement envers le développement durable.
