@@ -9,7 +9,7 @@ import {
 
 const services = [
   {
-    title: "Études de Faisabilité",
+    title: "Étude de Faisabilité Technique et Architecturale",
     description: "Analyse et évaluation complètes de la viabilité des projets, incluant les aspects techniques, économiques et juridiques pour assurer une mise en œuvre réussie.",
     icon: <ClipboardDocumentCheckIcon className="w-10 h-10 text-blue-600" />
   },

@@ -67,7 +67,7 @@ const About = () => {
               Redéfinir l'architecture <span className="text-blue-600">africaine</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Chez Itamax, nous ne concevons pas que des bâtiments. Nous façonnons des espaces qui inspirent, transforment et élèvent les communautés à travers l'Afrique. Notre approche allie esthétique audacieuse et fonctionnalité optimale, tout en respectant notre engagement envers le développement durable.
+              Chez ITAMAX, nous ne concevons pas que des bâtiments. Nous façonnons des espaces qui inspirent, transforment et élèvent les communautés à travers l'Afrique. Notre approche allie esthétique audacieuse et fonctionnalité optimale, tout en respectant notre engagement envers le développement durable.
             </p>
             
             {/* Caractéristiques */}

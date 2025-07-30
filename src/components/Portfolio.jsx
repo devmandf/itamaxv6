@@ -2,54 +2,58 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 // Import des images locales depuis le dossier public
-const banqueMondiale = '/assets/images/banqueMondiale.webp';
-const ua = '/assets/images/ua.webp';
+const kananga = '/assets/images/projet-BM-Kinshasa.webp';
+const aua = '/assets/images/projet-appins-CECCBADAbidjan.webp';
 const hopitalMbour = '/assets/images/hopital-mbour.webp';
 const villaOceane = '/assets/images/villa-océane.webp';
+const cfpt = '/assets/images/CFPT-B1.webp';
+const abattoirstivaouane = '/assets/images/abattoirstivaouane02.webp';
+const villambour = '/assets/images/Villa-Type-Nord-Américaine-(01).webp';
+const villaOuestFoire = '/assets/images/Villa-Ouest-Foire-(01).webp';
 
 const projects = {
   all: [
     {
       id: 1,
-      title: 'Siège de la Banque Mondiale, Dakar',
+      title: 'Complexe Royal de Kananga (18 000 élèves), Kinshasa',
       category: 'institutionnel',
-      description: 'Un bâtiment emblématique pour la Banque Mondiale au Sénégal.',
-      image: banqueMondiale,
+      description: 'Projet de réhabilitation du Complexe scolaire de Kananga pour moderniser l\'éducation.',
+      image: kananga,
     },
     {
       id: 2,
-      title: "Centre de Conférences de l'Union Africaine",
+      title: "Centre d’Excellence pour le Changement Climatique, la Biodiversité et l’Agriculture Durable, Abidjan",
       category: 'institutionnel',
-      description: 'Un centre de conférences ultramoderne pour l\'UA.',
-      image: ua,
+      description: 'Mission pour l’AUA (projet ACE, Banque Mondiale) : suivi des travaux, contrôle des équipements et validation des rapports.',
+      image: aua,
     },
     {
       id: 3,
-      title: 'Hôpital Régional, Mbour',
+      title: 'Centre de Formation Professionnelle et Technique de TYPE B, Sénégal',
       category: 'public',
-      description: 'Un hôpital moderne desservant la région de Mbour.',
-      image: hopitalMbour,
+      description: 'Projet de 10 ha incluant salles, ateliers, hébergements et voiries, pour 1,18 milliard F CFA par centre, soit 24,3 milliards pour 15 centres.',
+      image: cfpt,
     },
     {
       id: 4,
-      title: 'Résidence Les Almadies',
+      title: 'Villa Grand Standing à Mbour.',
       category: 'particulier',
-      description: 'Une résidence haut de gamme avec vue sur l\'océan.',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      description: 'Style nord-américain avec hall, plusieurs salons, chambres master, dressing, garages, piscine, gym, salle TV et billard, coût d’environ 750 millions F CFA.',
+      image: villambour,
     },
     {
       id: 5,
-      title: 'Université Amadou Mahtar Mbow',
+      title: 'Construction des Abattoirs de Tivaouane, Sénégal',
       category: 'public',
-      description: 'Un campus universitaire moderne et fonctionnel.',
-      image: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      description: 'Projet AGETIP de 10 ha : construction d’un complexe abattoir complet pour 1,1 milliard F CFA plus 83 millions d’honoraires.',
+      image: abattoirstivaouane,
     },
     {
       id: 6,
-      title: 'Villa Océane',
+      title: 'Villa Ouest Foire',
       category: 'particulier',
-      description: 'Une villa contemporaine avec piscine à Saly.',
-      image: villaOceane,
+      description: 'Construction d\'une villa R+3 à Ouest Foire.',
+      image: villaOuestFoire,
     },
   ],
   institutionnel: [],
