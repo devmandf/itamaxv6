@@ -17,7 +17,7 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.message) {
@@ -25,34 +25,9 @@ const ContactForm = () => {
       return;
     }
     
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/vlamidronbaltazar@gmail.com', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || 'Non fourni',
-          subject: formData.subject || 'Sans objet',
-          message: formData.message
-        })
-      });
-      
-      const result = await response.json();
-      
-      if (response.ok) {
-        alert('Message envoyé avec succès ! Nous vous recontacterons bientôt.');
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      } else {
-        throw new Error(result.message || 'Une erreur est survenue lors de l\'envoi du message.');
-      }
-    } catch (error) {
-      console.error('Erreur:', error);
-      alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer plus tard.');
-    }
+    // La soumission se fera via l'attribut 'action' du formulaire
+    // Cette fonction est juste pour la validation
+    return true;
   };
 
   return (
@@ -87,11 +62,13 @@ const ContactForm = () => {
               action="https://formsubmit.co/vlamidronbaltazar@gmail.com" 
               method="POST"
             >
-              {/* Ajout d'un token pour éviter le spam */}
+              {/* Configuration FormSubmit */}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="http://localhost:3000/merci" />
+              <input type="hidden" name="_next" value="https://itamax.tech/merci" />
               <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{display: 'none'}} />
+              <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous recontacterons dès que possible." />
+              <input type="hidden" name="_subject" value="Nouveau message depuis le site itamax.tech" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>
