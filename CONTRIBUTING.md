@@ -1,12 +1,27 @@
-# 🚀 Guide de contribution pour Itamax Website
+# 🚀 Guide de contribution pour Itamax
 
-Merci de votre intérêt pour contribuer au site web d'Itamax ! Ce document vous guidera à travers le processus de contribution et les bonnes pratiques à suivre.
+Merci de votre intérêt pour contribuer au site web officiel d'Itamax ! Ce document vous guidera à travers le processus de contribution et les bonnes pratiques à suivre.
+
+🌐 **Site officiel** : [https://itamax.fr](https://itamax.fr)
+
+## 🚀 Déploiement
+
+Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche `main` déclenche un déploiement automatique.
+
+### Environnements
+- **Production** : [https://itamax.fr](https://itamax.fr)
+- **Prévisualisation** : Chaque pull request génère une URL de prévisualisation unique
+- **Développement** : `npm run dev` pour le développement local
+
+### Variables d'environnement
+Assurez-vous de configurer les variables nécessaires dans le fichier `.env` ou dans les paramètres de déploiement Cloudflare.
 
 ## 🌟 Avant de commencer
 
-1. Consultez les [issues existantes](https://github.com/devmandf/itamax-website/issues) pour voir si votre contribution est déjà en cours de discussion
+1. Consultez les [issues existantes](https://github.com/devmandf/itamaxv6/issues) pour voir si votre contribution est déjà en cours de discussion
 2. Pour les nouvelles fonctionnalités, ouvrez d'abord une issue pour discuter des changements proposés
 3. Assurez-vous de respecter notre [code de conduite](CODE_OF_CONDUCT.md)
+4. Le site est déployé sur Cloudflare Pages et utilise React avec Vite
 
 ## 🛠 Configuration requise
 
@@ -20,8 +35,8 @@ Merci de votre intérêt pour contribuer au site web d'Itamax ! Ce document vous
 1. **Fork** le dépôt
 2. **Clone** votre fork :
    ```bash
-   git clone https://github.com/votre-utilisateur/itamax-website.git
-   cd itamax-website
+   git clone https://github.com/votre-utilisateur/itamaxv6.git
+   cd itamaxv6
    ```
 3. **Installez** les dépendances :
    ```bash

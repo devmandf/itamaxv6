@@ -1,11 +1,14 @@
 # 🏗️ Site Web Itamax
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fitamax.fr)](https://itamax.fr)
 [![Vite](https://img.shields.io/badge/vite-%5E5.0.0-646CFF.svg)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/react-%5E18.2.0-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%5E3.0.0-38B2AC.svg)](https://tailwindcss.com/)
 
-Site web vitrine moderne pour Itamax, entreprise spécialisée dans la construction, l'architecture et l'immobilier au Sénégal. Ce projet utilise les dernières technologies web pour offrir une expérience utilisateur optimale et des performances exceptionnelles.
+Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'architecture et l'immobilier au Sénégal. Ce site moderne et performant est développé avec les dernières technologies web pour offrir une expérience utilisateur optimale.
+
+🌐 **Site officiel** : [https://itamax.fr](https://itamax.fr)
 
 ## 🌟 Fonctionnalités clés
 
@@ -154,6 +157,21 @@ src/
 
 ## 🌐 Déploiement
 
+Le site est déployé sur [Cloudflare Pages](https://pages.cloudflare.com/) et accessible à l'adresse [https://itamax.fr](https://itamax.fr).
+
+### Déploiement automatique
+- Chaque push sur la branche `main` déclenche un nouveau déploiement
+- Les déploiements sont gérés via GitHub Actions
+- Le domaine personnalisé est configuré avec HTTPS automatique
+
+### Variables d'environnement
+Créez un fichier `.env` à la racine du projet avec les variables nécessaires :
+
+```env
+VITE_SITE_URL=https://itamax.fr
+# Autres variables d'environnement...
+```
+
 ### Préparation pour la production
 ```bash
 npm run build
@@ -198,7 +216,7 @@ Créez un fichier `.env` à la racine du projet :
 ```
 VITE_APP_TITLE=Itamax
 VITE_APP_DESCRIPTION=Entreprise de construction et d'architecture
-VITE_APP_API_URL=https://api.itamax.sn
+VITE_APP_API_URL=https://api.itamax.fr
 ```
 
 ### Configuration de Tailwind
@@ -231,7 +249,7 @@ Le fichier `tailwind.config.js` peut être personnalisé pour :
 - **Adresse** : Liberté 6 Extension Camp Pénal, Villa 2, Dakar, Sénégal
 - **Téléphone** : [+221 33 867 18 55](tel:+221338671855)
 - **Email** : [itamax@orange.sn](mailto:itamax@orange.sn)
-- **Site web** : [https://www.itamax.sn](https://www.itamax.sn)
+- **Site web** : [https://itamax.fr](https://itamax.fr)
 
 ## 📝 Licence
 
