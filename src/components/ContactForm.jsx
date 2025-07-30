@@ -32,7 +32,7 @@ const ContactForm = () => {
     submitButton.textContent = 'Envoi en cours...';
     
     try {
-      const response = await fetch('https://formsubmit.co/ajax/af322563b671f37c1a88e7c60bfe6c90', {
+      const response = await fetch('https://formsubmit.co/ajax/vlamidronbaltazar@gmail.com', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -44,10 +44,12 @@ const ContactForm = () => {
           phone: formData.phone || 'Non fourni',
           subject: formData.subject || 'Sans objet',
           message: formData.message,
-          _subject: 'Nouveau message depuis le site itamax.tech',
+          _subject: 'Nouveau message depuis le site itamax.fr',
           _template: 'table',
           _captcha: 'false',
-          _honey: '' // Champ honeypot vide
+          _honey: '', // Champ honeypot vide
+          _next: 'https://itamax.fr/merci',
+          _autoresponse: `Bonjour ${formData.name},\n\nMerci pour votre message. Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe ITAMAX`
         })
       });
       
@@ -102,11 +104,12 @@ const ContactForm = () => {
               className="space-y-5"
             >
               {/* Configuration FormSubmit */}
+              {/* Configuration FormSubmit pour itamax.fr */}
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="text" name="_honey" style={{display: 'none'}} />
-              <input type="hidden" name="_subject" value="Nouveau message depuis le site itamax.tech" />
-              <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous recontacterons dès que possible." />
+              <input type="hidden" name="_subject" value="Nouveau message depuis le site itamax.fr" />
+              <input type="hidden" name="_next" value="https://itamax.fr/merci" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>
