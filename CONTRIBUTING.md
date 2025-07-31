@@ -146,7 +146,15 @@ Types de commits :
    - S'assurer que les logos sont nets et de haute qualité
    - Dimensions recommandées : minimum 400x200px pour une bonne qualité sur tous les écrans
 
-2. **Style et apparence des cartes** :
+2. **Style du composant Hero** :
+   - Texte de surimpression avec fond semi-transparent
+   - Utilisation de `backdrop-filter: blur(4px)` pour une meilleure lisibilité
+   - Couleur de fond : `rgba(67, 82, 235, 0.1)` avec effet de flou
+   - Ombre légère pour la profondeur
+   - Animation au chargement avec Framer Motion
+   - Texte blanc pour un contraste optimal
+
+3. **Style et apparence des cartes** :
    - Dégradé de fond : `bg-gradient-to-br from-blue-50 to-white`
    - Bordure : `border-2 border-blue-100`
    - Ombre : `shadow-md hover:shadow-2xl hover:shadow-gray-600/40`

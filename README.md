@@ -15,6 +15,9 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 ### 🎨 Interface utilisateur
 - Design responsive et moderne avec une expérience utilisateur optimisée
 - Navigation fluide avec défilement vers les sections
+- Section Hero avec texte en surimpression lisible
+  - Effets de transparence et de flou pour une meilleure intégration
+  - Animation douce au chargement de la page
 - Animations fluides avec Framer Motion
 - Système de filtrage hiérarchique des projets
   - Catégories principales : AMO, Appuis institutionnels, Projets d'études

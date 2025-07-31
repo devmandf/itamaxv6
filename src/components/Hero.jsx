@@ -72,7 +72,17 @@ const Hero = () => {
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             Spécialisé dans les infrastructures publiques et institutionnelles
-            <span className="block font-medium" style={{ color: 'rgba(67, 82, 235, 1)' }}>de grande envergure à travers l'Afrique</span>
+            <span 
+              className="inline-block font-medium mt-2 px-3 py-1 rounded-md" 
+              style={{ 
+                color: 'white',
+                backgroundColor: 'rgba(67, 82, 235, 0.1)',
+                backdropFilter: 'blur(4px)',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}
+            >
+              de grande envergure à travers l'Afrique
+            </span>
           </motion.p>
         </motion.div>
 
