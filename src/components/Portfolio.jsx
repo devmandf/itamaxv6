@@ -11,6 +11,8 @@ const cfpt = '/assets/images/CFPT-B1.webp';
 const abattoirstivaouane = '/assets/images/abattoirstivaouane02.webp';
 const villambour = '/assets/images/Villa-Type-Nord-Américaine-(01).webp';
 const villaOuestFoire = '/assets/images/Villa-Ouest-Foire-(01).webp';
+const gareFret = '/assets/images/projet-amo-garefretlss-01sur01.webp';
+const feltiplexsangalkam = '/assets/images/projet-amo-feltiplex-02sur02.webp';
 
 const projects = {
   all: [
@@ -56,21 +58,38 @@ const projects = {
       description: 'Construction d\'une villa R+3 à Ouest Foire.',
       image: villaOuestFoire,
     },
+    {
+      id: 7,
+      title: 'Gare de Fret de l’Aéroport Léopold Sédar Senghor, Sénégal',
+      category: 'amo',
+      description: 'Projet PPEA à l’aéroport de Dakar : gare de fret avec chambres froides, bureaux et équipements d’export, financé par la Banque Mondiale et l’État (2,5 M\$US).',
+      image: gareFret,
+    },
+    {
+      id: 8,
+      title: 'Feltiplex de Sangalkam, Sénégal',
+      category: 'amo',
+      description: 'Centre FELTIPLEX à Sangalkam (4000 m²) pour le conditionnement de fruits et légumes, avec chambres froides, zones de stockage, coûtant 1,5 M\$US.',
+      image: feltiplexsangalkam,
+    }
   ],
   institutionnel: [],
   public: [],
-  particulier: []
+  particulier: [],
+  amo: []
 };
 
 // Remplir les catégories
 projects.institutionnel = projects.all.filter(project => project.category === 'institutionnel');
 projects.public = projects.all.filter(project => project.category === 'public');
 projects.particulier = projects.all.filter(project => project.category === 'particulier');
+projects.amo = projects.all.filter(project => project.category === 'amo');
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('amo');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [portfolioItems, setPortfolioItems] = useState(projects.amo); // Initialiser avec les projets AMO
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -82,7 +101,6 @@ const Portfolio = () => {
     // Délai pour permettre l'animation de fermeture avant de réinitialiser
     setTimeout(() => setSelectedProject(null), 300);
   };
-  const [portfolioItems, setPortfolioItems] = useState(projects.all);
 
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
@@ -107,10 +125,10 @@ const Portfolio = () => {
 
         {/* Filtres */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {['Tous les projets', 'Institutionnels', 'Public', 'Particuliers'].map((filter) => {
-            const filterKey = filter === 'Tous les projets' ? 'all' : 
-                            filter === 'Institutionnels' ? 'institutionnel' : 
-                            filter === 'Public' ? 'public' : 'particulier';
+          {['Assistance à Maîtrise d\'Ouvrage Déléguée (AMO)', 'Appuis institutionnels', 'Bâtiments institutionnels', 'Immeubles et Villa'].map((filter) => {
+            const filterKey = filter === 'Appuis institutionnels' ? 'institutionnel' : 
+                            filter === 'Bâtiments institutionnels' ? 'public' : 
+                            filter === 'Assistance à Maîtrise d\'Ouvrage Déléguée (AMO)' ? 'amo' : 'particulier';
             
             return (
               <button

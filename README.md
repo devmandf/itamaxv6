@@ -16,7 +16,9 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 - Design responsive et moderne
 - Navigation fluide avec défilement vers les sections
 - Animations fluides avec Framer Motion
-- Thème couleur personnalisé avec support du mode sombre (à venir)
+- Filtrage dynamique des projets par catégorie
+- Galerie de projets avec aperçu des réalisations
+- Modal de visualisation des détails des projets
 - Police Jura SemiBold pour une excellente lisibilité
 
 ### ⚡ Performances
@@ -27,9 +29,11 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 
 ### 🔍 SEO & Accessibilité
 - Balisage sémantique HTML5
-- Métadonnées optimisées
+- Métadonnées optimisées pour chaque projet
 - Structure ARIA pour l'accessibilité
 - Sitemap généré automatiquement
+- Optimisation des images avec format WebP
+- Balises alt descriptives pour toutes les images
 
 ### 📱 PWA (Progressive Web App)
 - Installation sur l'écran d'accueil
@@ -45,7 +49,8 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitaire
 - ✨ [Framer Motion](https://www.framer.com/motion/) - Bibliothèque d'animations
 - 🔄 [React Router](https://reactrouter.com/) - Gestion de la navigation
-- 🗺️ [React Leaflet](https://react-leaflet.js.org/) - Intégration de cartes
+- 🖼️ [React Modal](https://reactcommunity.org/react-modal/) - Gestion des modales
+- 🏷️ [React Icons](https://react-icons.github.io/react-icons/) - Bibliothèque d'icônes
 
 ### Outils de développement
 - 🧪 [Vitest](https://vitest.dev/) - Framework de tests

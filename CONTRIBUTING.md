@@ -13,6 +13,13 @@ Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche
 - **Prévisualisation** : Chaque pull request génère une URL de prévisualisation unique
 - **Développement** : `npm run dev` pour le développement local
 
+### Catégories de projets
+Les projets sont organisés en catégories :
+- Assistance à Maîtrise d'Ouvrage Déléguée (AMO)
+- Appuis institutionnels
+- Bâtiments institutionnels
+- Immeubles et Villa
+
 ### Variables d'environnement
 Assurez-vous de configurer les variables nécessaires dans le fichier `.env` ou dans les paramètres de déploiement Cloudflare.
 
@@ -166,9 +173,12 @@ Types de commits :
 ## 🖼️ Gestion des images
 
 1. **Formats recommandés** :
-   - Utiliser le format WebP pour de meilleures performances
-   - Fournir des alternatives en JPG/PNG pour la compatibilité
-   - Optimiser toutes les images avant l'ajout
+   - Utiliser exclusivement le format WebP pour les images
+   - Convention de nommage : `projet-[courte-description]-[numéro].webp` (ex: `projet-amo-garefretlss-01sur01.webp`)
+   - Résolution recommandée : 1200x800px pour les images de projet
+   - Poids maximum : 300KB par image
+   - Ajouter des balises alt descriptives en français
+   - Pour chaque projet, fournir au moins une image représentative
 
 2. **Taille et dimensions** :
    - Redimensionner les images avant l'upload
