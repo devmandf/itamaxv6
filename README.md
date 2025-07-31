@@ -40,12 +40,14 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 - Préchargement des ressources critiques
 
 ### 🔍 SEO & Accessibilité
-- Balisage sémantique HTML5
-- Métadonnées optimisées pour chaque projet
-- Structure ARIA pour l'accessibilité
-- Sitemap généré automatiquement
-- Optimisation des images avec format WebP
-- Balises alt descriptives pour toutes les images
+- Balisage sémantique HTML5 avec structure hiérarchique optimisée
+- Métadonnées optimisées pour le référencement local (Sénégal)
+- Structure ARIA pour une accessibilité optimale
+- Sitemap XML généré pour une meilleure indexation
+- Données structurées Schema.org pour les résultats enrichis
+- Optimisation des images avec format WebP et balises alt descriptives
+- Fichier robots.txt configuré pour le contrôle du crawl
+- Balises canoniques pour éviter le contenu dupliqué
 
 ### 📱 PWA (Progressive Web App)
 - Installation sur l'écran d'accueil

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itamax.fr/sitemap.xml

@@ -57,21 +57,23 @@ const Hero = () => {
           className="text-right mt-16 max-w-xl ml-auto"
           variants={itemVariants}
         >
-          <motion.p 
+          <motion.h1 
             className="text-xl md:text-2xl font-light leading-relaxed italic"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            Cabinet de référence en études architecturales
-          </motion.p>
-          <motion.p 
+            Cabinet d'architecture de référence au Sénégal
+          </motion.h1>
+          <motion.div 
             className="text-lg md:text-xl mt-4 font-light"
             initial={{ x: 30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            Spécialisé dans les infrastructures publiques et institutionnelles
+            <p className="mb-2">
+              Experts en conception architecturale et aménagement intérieur à Dakar
+            </p>
             <span 
               className="inline-block font-medium mt-2 px-3 py-1 rounded-md" 
               style={{ 
@@ -81,9 +83,9 @@ const Hero = () => {
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}
             >
-              de grande envergure à travers l'Afrique
+              Réalisations d'envergure à travers l'Afrique de l'Ouest
             </span>
-          </motion.p>
+          </motion.div>
         </motion.div>
 
 

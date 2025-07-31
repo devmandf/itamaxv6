@@ -29,6 +29,30 @@ Les projets sont organisés en un système hiérarchique de filtres :
 - Les sous-filtres restent visibles pour une navigation facile
 - La sélection d'un sous-filtre met à jour l'affichage des projets correspondants
 
+### Configuration du Référencement (SEO)
+
+#### Fichiers de Configuration
+- `sitemap.xml` : Liste toutes les URLs importantes du site
+- `robots.txt` : Guide les robots d'indexation
+- `manifest.json` : Configuration PWA
+- `schema.json` : Données structurées Schema.org
+
+#### Bonnes Pratiques SEO
+1. **Métadonnées** :
+   - Titre unique par page (max 60 caractères)
+   - Meta description pertinente (150-160 caractères)
+   - Balises Open Graph pour les partages sociaux
+
+2. **Structured Data** :
+   - Utiliser les schémas appropriés (Organization, LocalBusiness, etc.)
+   - Mettre à jour les coordonnées et horaires
+   - Inclure les informations de localisation
+
+3. **URLs** :
+   - Toujours utiliser des URLs canoniques
+   - S'assurer que toutes les URLs répondent en 200 OK
+   - Éviter le contenu dupliqué
+
 ### Variables d'environnement
 Assurez-vous de configurer les variables nécessaires dans le fichier `.env` ou dans les paramètres de déploiement Cloudflare.
 

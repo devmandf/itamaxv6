@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ITAMAX",
+  "image": "https://itamax.fr/logo.png",
+  "@id": "https://itamax.fr",
+  "url": "https://itamax.fr",
+  "telephone": "+221 33 000 00 00",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue XX, Immeuble YY",
+    "addressLocality": "Dakar",
+    "postalCode": "10000",
+    "addressCountry": "SN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 14.716677,
+    "longitude": -17.467686
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/itamax-senegal",
+    "https://www.facebook.com/itamaxsenegal",
+    "https://www.instagram.com/itamaxsenegal"
+  ]
+}
