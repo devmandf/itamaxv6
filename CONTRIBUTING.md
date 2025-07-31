@@ -145,7 +145,22 @@ Types de commits :
    - S'assurer que les logos sont nets et de haute qualité
    - Dimensions recommandées : minimum 400x200px pour une bonne qualité sur tous les écrans
 
-2. **Style et apparence** :
+2. **Style et apparence des cartes** :
+   - Dégradé de fond : `bg-gradient-to-br from-blue-50 to-white`
+   - Bordure : `border-2 border-blue-100`
+   - Ombre : `shadow-md hover:shadow-2xl hover:shadow-gray-600/40`
+   - Effet de survol : 
+     - Légère élévation (`hover:-translate-y-1`)
+     - Ombre plus prononcée
+     - Transition fluide (`transition-all duration-300`)
+   - Texte : 
+     - Titres en `text-gray-800` avec effet `hover:text-blue-600`
+     - Description en `text-gray-600`
+   - Images :
+     - Légère mise à l'échelle au survol (`group-hover:scale-105`)
+     - Superposition semi-transparente avec bouton "Voir en grand"
+
+3. **Style des icônes** :
    - Les logos doivent être en couleur par défaut
    - Effet de survol : léger agrandissement (scale: 1.1) avec transition fluide
    - Ajouter un fond dégradé subtil au survol pour une meilleure interaction

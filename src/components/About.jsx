@@ -4,7 +4,7 @@ import { FaBuilding, FaRulerCombined, FaLeaf } from 'react-icons/fa';
 
 const About = () => {
   const stats = [
-    { value: '15+', label: 'Années d\'expérience' },
+    { value: '30+', label: 'Années d\'expérience' },
     { value: '200+', label: 'Projets réalisés' },
     { value: '12', label: 'Pays d\'intervention' },
   ];
@@ -75,14 +75,13 @@ const About = () => {
               {features.map((feature, index) => (
                 <motion.div 
                   key={index}
-                  className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                  whileHover={{ y: -5 }}
+                  className="flex items-start space-x-4 p-6 rounded-xl border-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-gray-600/40 bg-gradient-to-br from-blue-50 to-white border-blue-100 shadow-md"
                 >
-                  <div className="flex-shrink-0 p-2 rounded-lg bg-blue-50">
+                  <div className="flex-shrink-0 p-3 rounded-full bg-blue-50">
                     {feature.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </div>
                 </motion.div>

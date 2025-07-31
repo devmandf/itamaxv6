@@ -46,7 +46,7 @@ const FeaturedProjects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+              className="rounded-xl overflow-hidden cursor-pointer group bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-md hover:shadow-2xl hover:shadow-gray-600/40 transition-all duration-300 transform hover:-translate-y-1"
               onClick={() => openModal(project)}
             >
               <div className="relative h-64 overflow-hidden">
@@ -56,17 +56,17 @@ const FeaturedProjects = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-white/90 text-blue-600 px-4 py-2 rounded-full font-medium">
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="bg-white/90 text-blue-600 px-4 py-2 rounded-full font-medium shadow-md">
                     Voir en grand
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 line-clamp-2">{project.description}</p>
+                <p className="text-gray-600">{project.description}</p>
               </div>
             </motion.div>
           ))}

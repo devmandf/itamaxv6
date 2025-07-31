@@ -9,7 +9,7 @@ import {
 
 const services = [
   {
-    title: "Étude de Faisabilité Technique et Architecturale",
+    title: "Étude de Faisabilité Technique et Financière",
     description: "Analyse et évaluation complètes de la viabilité des projets, incluant les aspects techniques, économiques et juridiques pour assurer une mise en œuvre réussie.",
     icon: <ClipboardDocumentCheckIcon className="w-10 h-10 text-blue-600" />
   },
@@ -55,7 +55,15 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300"
+              className={`p-8 rounded-xl border-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-gray-600/40 ${
+                service.title === "Étude de Faisabilité Technique et Financière"
+                  ? 'bg-gradient-to-br from-blue-50 to-white border-blue-100 shadow-md'
+                  : service.title === "Urbanisme et Aménagement du Territoire" 
+                  ? 'bg-gradient-to-br from-blue-50 to-white border-blue-100 shadow-md'
+                  : service.title === "Conseil en Conception Durable"
+                  ? 'bg-gradient-to-br from-blue-50 to-white border-blue-100 shadow-md'
+                  : 'bg-gradient-to-br from-blue-50 to-white border-blue-100 shadow-md'
+              }`}
             >
               <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
                 {service.icon}
