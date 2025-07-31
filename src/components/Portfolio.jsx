@@ -13,9 +13,17 @@ const villambour = '/assets/images/Villa-Type-Nord-Américaine-(01).webp';
 const villaOuestFoire = '/assets/images/Villa-Ouest-Foire-(01).webp';
 const gareFret = '/assets/images/projet-amo-garefretlss-01sur01.webp';
 const feltiplexsangalkam = '/assets/images/projet-amo-feltiplex-02sur02.webp';
+const ConstructiondesLYNAQEdeSédhiou = '/assets/images/ConstructiondesLYNAQEdeSédhiou.webp';
 
 const projects = {
   all: [
+    {
+      id: 9,
+      title: 'Construction des Lycées Nation-Armée pour la Qualité et l\'Équité (Lynaqe) de Sédhiou et Kaffrine',
+      category: 'institutionnel',
+      description: 'Consultant individuel – Banque Mondiale Sénégal : appui aux études et à la supervision des lycées LYNAQE de Sédhiou et Kaffrine (12 milliards F CFA).',
+      image: ConstructiondesLYNAQEdeSédhiou,
+    },
     {
       id: 1,
       title: 'Complexe Royal de Kananga (18 000 élèves), Kinshasa',
