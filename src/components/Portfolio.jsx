@@ -89,6 +89,7 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('amo');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSubFilters, setShowSubFilters] = useState(false);
   const [portfolioItems, setPortfolioItems] = useState(projects.amo); // Initialiser avec les projets AMO
 
   const openModal = (project) => {
@@ -102,9 +103,28 @@ const Portfolio = () => {
     setTimeout(() => setSelectedProject(null), 300);
   };
 
-  const handleFilterClick = (filter) => {
-    setActiveFilter(filter);
-    setPortfolioItems(projects[filter]);
+  const handleFilterClick = (filter, isMainFilter = true) => {
+    if (filter === 'etudes') {
+      // Si on clique sur 'etudes' et que les sous-filtres sont visibles, on les cache
+      if (showSubFilters) {
+        setShowSubFilters(false);
+      } else {
+        // Sinon, on affiche les sous-filtres et on active 'etudes'
+        setShowSubFilters(true);
+        setActiveFilter('etudes');
+        setPortfolioItems([]);
+      }
+    } else if (filter === 'public' || filter === 'particulier') {
+      // Si on clique sur un sous-filtre
+      setActiveFilter(filter);
+      setPortfolioItems(projects[filter]);
+      setShowSubFilters(true);
+    } else {
+      // Pour les autres filtres (amo, institutionnel)
+        setActiveFilter(filter);
+      setPortfolioItems(projects[filter]);
+      setShowSubFilters(false);
+    }
   };
 
   return (
@@ -123,28 +143,49 @@ const Portfolio = () => {
           </p>
         </motion.div>
 
-        {/* Filtres */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {['Assistance à Maîtrise d\'Ouvrage Déléguée (AMO)', 'Appuis institutionnels', 'Bâtiments institutionnels', 'Immeubles et Villa'].map((filter) => {
-            const filterKey = filter === 'Appuis institutionnels' ? 'institutionnel' : 
-                            filter === 'Bâtiments institutionnels' ? 'public' : 
-                            filter === 'Assistance à Maîtrise d\'Ouvrage Déléguée (AMO)' ? 'amo' : 'particulier';
-            
-            return (
+        {/* Filtres principaux */}
+        <div className="flex flex-wrap justify-center gap-4 mb-4">
+          {[
+            { label: 'Assistance à Maîtrise d\'Ouvrage Déléguée (AMO)', key: 'amo' },
+            { label: 'Appuis institutionnels', key: 'institutionnel' },
+            { label: 'Projets Études Architecturales et Techniques', key: 'etudes' }
+          ].map(({ label, key }) => (
+            <button
+              key={key}
+              onClick={() => handleFilterClick(key)}
+              className={`px-6 py-2 rounded-full font-medium transition-colors border border-gray-200 ${
+                activeFilter === key || 
+                (key === 'etudes' && (activeFilter === 'public' || activeFilter === 'particulier' || activeFilter === 'etudes'))
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'bg-white text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* Sous-filtres pour Études */}
+        {(showSubFilters || activeFilter === 'public' || activeFilter === 'particulier') && (
+          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fadeIn">
+            {[
+              { label: 'Bâtiments institutionnels', key: 'public' },
+              { label: 'Immeubles et Villa', key: 'particulier' }
+            ].map(({ label, key }) => (
               <button
-                key={filter}
-                onClick={() => handleFilterClick(filterKey)}
+                key={key}
+                onClick={() => handleFilterClick(key, false)}
                 className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                  activeFilter === filterKey
+                  activeFilter === key
                     ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
-                {filter}
+                {label}
               </button>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Grille de projets */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

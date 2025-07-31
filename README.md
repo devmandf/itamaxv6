@@ -16,7 +16,9 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 - Design responsive et moderne
 - Navigation fluide avec défilement vers les sections
 - Animations fluides avec Framer Motion
-- Filtrage dynamique des projets par catégorie
+- Système de filtrage hiérarchique des projets
+  - Catégories principales : AMO, Appuis institutionnels, Projets d'études
+  - Sous-catégories pour les projets d'études : Bâtiments institutionnels, Immeubles et Villa
 - Galerie de projets avec aperçu des réalisations
 - Modal de visualisation des détails des projets
 - Police Jura SemiBold pour une excellente lisibilité

@@ -14,11 +14,19 @@ Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche
 - **Développement** : `npm run dev` pour le développement local
 
 ### Catégories de projets
-Les projets sont organisés en catégories :
-- Assistance à Maîtrise d'Ouvrage Déléguée (AMO)
-- Appuis institutionnels
-- Bâtiments institutionnels
-- Immeubles et Villa
+Les projets sont organisés en un système hiérarchique de filtres :
+
+#### Catégories principales
+- **Assistance à Maîtrise d'Ouvrage Déléguée (AMO)**
+- **Appuis institutionnels**
+- **Projets Études Architecturales et Techniques**
+  - Bâtiments institutionnels
+  - Immeubles et Villa
+
+#### Comportement des filtres
+- Un seul filtre principal peut être actif à la fois
+- Le filtre "Projets Études" affiche des sous-filtres supplémentaires
+- La sélection d'un sous-filtre désactive automatiquement les autres filtres principaux
 
 ### Variables d'environnement
 Assurez-vous de configurer les variables nécessaires dans le fichier `.env` ou dans les paramètres de déploiement Cloudflare.
