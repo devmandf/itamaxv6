@@ -18,6 +18,7 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 - Animations fluides avec Framer Motion
 - Système de filtrage hiérarchique des projets
   - Catégories principales : AMO, Appuis institutionnels, Projets d'études
+  - Sélection automatique de 'Bâtiments institutionnels' lors du clic sur 'Projets d'études'
   - Sous-catégories pour les projets d'études : Bâtiments institutionnels, Immeubles et Villa
 - Cartes de projet avec effets de survol élégants
   - Dégradé de bleu clair à blanc

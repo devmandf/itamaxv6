@@ -25,8 +25,9 @@ Les projets sont organisés en un système hiérarchique de filtres :
 
 #### Comportement des filtres
 - Un seul filtre principal peut être actif à la fois
-- Le filtre "Projets Études" affiche des sous-filtres supplémentaires
-- La sélection d'un sous-filtre désactive automatiquement les autres filtres principaux
+- Le filtre "Projets Études" affiche automatiquement les projets de la catégorie "Bâtiments institutionnels"
+- Les sous-filtres restent visibles pour une navigation facile
+- La sélection d'un sous-filtre met à jour l'affichage des projets correspondants
 
 ### Variables d'environnement
 Assurez-vous de configurer les variables nécessaires dans le fichier `.env` ou dans les paramètres de déploiement Cloudflare.

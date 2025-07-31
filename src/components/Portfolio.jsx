@@ -8,6 +8,7 @@ const aua = '/assets/images/projet-appins-CECCBADAbidjan.webp';
 const hopitalMbour = '/assets/images/hopital-mbour.webp';
 const villaOceane = '/assets/images/villa-océane.webp';
 const cfpt = '/assets/images/CFPT-B1.webp';
+const cfptTypeA = '/assets/images/TypeA.webp';
 const abattoirstivaouane = '/assets/images/abattoirstivaouane02.webp';
 const villambour = '/assets/images/Villa-Type-Nord-Américaine-(01).webp';
 const villaOuestFoire = '/assets/images/Villa-Ouest-Foire-(01).webp';
@@ -39,10 +40,17 @@ const projects = {
       image: aua,
     },
     {
+      id: 10,
+      title: 'Centre de Formation Professionnelle et Technique de TYPE A, Sénégal',
+      category: 'public',
+      description: 'Prototype A sur 7 ha : 1295 m² de salles de cours, 780 m² d’ateliers pratiques, hébergements, équipements annexes, voiries et espaces verts.',
+      image: cfptTypeA,
+    },
+    {
       id: 3,
       title: 'Centre de Formation Professionnelle et Technique de TYPE B, Sénégal',
       category: 'public',
-      description: 'Projet de 10 ha incluant salles, ateliers, hébergements et voiries, pour 1,18 milliard F CFA par centre, soit 24,3 milliards pour 15 centres.',
+      description: 'Projet sur 10 ha incluant salles, ateliers, hébergements et voiries, pour 1,18 milliard F CFA par centre, soit 24,3 milliards pour 15 centres.',
       image: cfpt,
     },
     {
@@ -113,15 +121,10 @@ const Portfolio = () => {
 
   const handleFilterClick = (filter, isMainFilter = true) => {
     if (filter === 'etudes') {
-      // Si on clique sur 'etudes' et que les sous-filtres sont visibles, on les cache
-      if (showSubFilters) {
-        setShowSubFilters(false);
-      } else {
-        // Sinon, on affiche les sous-filtres et on active 'etudes'
-        setShowSubFilters(true);
-        setActiveFilter('etudes');
-        setPortfolioItems([]);
-      }
+      // Si on clique sur 'etudes', on affiche les sous-filtres et on sélectionne automatiquement 'public'
+      setShowSubFilters(true);
+      setActiveFilter('public');
+      setPortfolioItems(projects['public']);
     } else if (filter === 'public' || filter === 'particulier') {
       // Si on clique sur un sous-filtre
       setActiveFilter(filter);
@@ -129,7 +132,7 @@ const Portfolio = () => {
       setShowSubFilters(true);
     } else {
       // Pour les autres filtres (amo, institutionnel)
-        setActiveFilter(filter);
+      setActiveFilter(filter);
       setPortfolioItems(projects[filter]);
       setShowSubFilters(false);
     }
