@@ -13,6 +13,14 @@ Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche
 - **Prévisualisation** : Chaque pull request génère une URL de prévisualisation unique
 - **Développement** : `npm run dev` pour le développement local
 
+### Coordonnées de l'entreprise
+- **Adresse** : Liberté 6 Extension Camp Pénal, Dakar, Sénégal
+- **Téléphone** : 
+  - +221 33 867 18 55
+  - +221 77 450 39 39
+- **Email** : itamax@orange.sn
+- **Horaires d'ouverture** : Lundi - Vendredi : 8h00 - 17h00
+
 ### Catégories de projets
 Les projets sont organisés en un système hiérarchique de filtres :
 
