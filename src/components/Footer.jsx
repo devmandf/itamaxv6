@@ -11,12 +11,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}
           <div className="space-y-5">
-            <h3 className="text-2xl font-bold text-white">itamax</h3>
+            <h3 className="text-2xl font-bold text-white">ITAMAX</h3>
             <p className="leading-relaxed">
               Votre partenaire de confiance pour des solutions d'architecture innovantes et durables 
               qui transforment les espaces et améliorent les vies.
             </p>
-            <div className="flex space-x-4 pt-2">
+            <div className="hidden">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <FaFacebook className="h-5 w-5" />
               </a>
@@ -39,7 +39,7 @@ const Footer = () => {
               <li><Link to="home" smooth={true} duration={500} className="hover:text-white transition-colors cursor-pointer">Accueil</Link></li>
               <li><Link to="about" smooth={true} duration={500} className="hover:text-white transition-colors cursor-pointer">À Propos</Link></li>
               <li><Link to="services" smooth={true} duration={500} className="hover:text-white transition-colors cursor-pointer">Services</Link></li>
-              <li><Link to="portfolio" smooth={true} duration={500} className="hover:text-white transition-colors cursor-pointer">Portfolio</Link></li>
+              <li><Link to="realisations" smooth={true} duration={500} className="hover:text-white transition-colors cursor-pointer">Réalisations</Link></li>
               <li><Link to="contact" smooth={true} duration={500} className="hover:text-white transition-colors cursor-pointer">Contact</Link></li>
             </ul>
           </div>
@@ -87,13 +87,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-6">
           <p className="text-sm text-gray-500">
-            &copy; {currentYear} itamax. Tous droits réservés.
+            &copy; {currentYear} ITAMAX. Tous droits réservés.
           </p>
-          <div className="flex flex-wrap justify-center md:justify-end space-x-6 mt-4 md:mt-0">
-            <Link to="/mentions-legales" className="text-sm text-gray-500 hover:text-white transition-colors">Mentions Légales</Link>
-            <Link to="/politique-confidentialite" className="text-sm text-gray-500 hover:text-white transition-colors">Politique de Confidentialité</Link>
-            <Link to="/conditions-utilisation" className="text-sm text-gray-500 hover:text-white transition-colors">Conditions d'Utilisation</Link>
-            <Link to="/plan-du-site" className="text-sm text-gray-500 hover:text-white transition-colors">Plan du Site</Link>
+          <div className="text-sm text-gray-500 hover:text-white transition-colors">
+            Conception du site : <a href="mailto:devmandf@gmail.com" className="hover:underline font-['Jura'] tracking-wider">devmandf@gmail.com</a>
           </div>
         </div>
       </div>

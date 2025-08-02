@@ -248,7 +248,7 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 hidden">
                 <h4 className="text-lg font-medium text-gray-800 mb-4">Suivez-nous</h4>
                 <div className="flex space-x-4">
                   <a href="#" className="bg-gray-100 p-2 rounded-full text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition-colors">

@@ -6,7 +6,7 @@ import TrustedBy from './components/TrustedBy';
 import About from './components/About';
 import FeaturedProjects from './components/FeaturedProjects';
 import Services from './components/Services';
-import Portfolio from './components/Portfolio';
+import Realisations from './components/Realisations';
 import Map from './components/Map';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -30,7 +30,7 @@ function AppContent() {
             <About />
             <FeaturedProjects />
             <Services />
-            <Portfolio />
+            <Realisations />
             <Map />
             <ContactForm />
           </>

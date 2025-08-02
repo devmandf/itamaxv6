@@ -4,9 +4,9 @@ import ImageModal from './ImageModal';
 
 const projects = [
   {
-    title: 'Siège de la Société Sénégalaise de Pêche et d\'Armement (SOPASEN)',
-    description: 'Siège moderne et fonctionnel pour le leader sénégalais de la pêche et de l\'armement maritime.',
-    image: '/assets/images/sopasen01.webp',
+    title: 'Siège du Ministère de la Santé et de l\'Action Sociale',
+    description: 'Consultant individuel : Assistance à la maîtrise d\'ouvrage pour la construction du Ministère de la Santé et de l\'Action Sociale dans le cadre du Programme National de Développement Sanitaire (PNDS) / Convention AGETIP / Ministère de la Santé Financement Banque Mondiale / État du Sénégal (5.4 M$US).',
+    image: '/assets/images/MSAS.webp',
   },
   {
     title: 'Siège du Ministère de l\'Environnement et de la Protection de la Nature (MEPN)',
@@ -14,9 +14,9 @@ const projects = [
     image: '/assets/images/MEPN02.webp',
   },
   {
-    title: 'Siège de l\'Office National de Formation Professionnelle (ONFP) à Saint-Louis',
-    description: 'Un espace éducatif moderne favorisant l\'apprentissage et le développement des compétences professionnelles dans un cadre inspirant.',
-    image: '/assets/images/ONFPSTLOUIS04.webp',
+    title: 'Siège de la Société Sénégalaise de Pêche et d\'Armement (SOPASEN)',
+    description: 'Siège moderne et fonctionnel pour le leader sénégalais de la pêche et de l\'armement maritime.',
+    image: '/assets/images/sopasen01.webp',
   },
 ];
 

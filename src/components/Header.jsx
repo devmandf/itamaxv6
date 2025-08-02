@@ -79,7 +79,7 @@ const Header = () => {
                 <li><a href="#about" className="nav-link hover:text-blue-700 font-['Jura'] font-semibold">À Propos</a></li>
                 <li><a href="#projects" className="nav-link hover:text-blue-700 font-['Jura'] font-semibold">Projets</a></li>
                 <li><a href="#services" className="nav-link hover:text-blue-700 font-['Jura'] font-semibold">Services</a></li>
-                <li><a href="#portfolio" className="nav-link hover:text-blue-700 font-['Jura'] font-semibold">Portfolio</a></li>
+                <li><a href="#realisations" className="nav-link hover:text-blue-700 font-['Jura'] font-semibold">Réalisations</a></li>
                 <li><a href="#contact" className="nav-link hover:text-blue-700 font-['Jura'] font-semibold">Contact</a></li>
               </ul>
             </nav>
@@ -158,7 +158,7 @@ const Header = () => {
                   onClick={closeMenu} 
                   className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
                 >
-                  Portfolio
+                  Réalisations
                 </NavLink>
               </li>
               <li>
