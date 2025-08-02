@@ -63,7 +63,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
-                <span className="ml-3">Liberté 6 Extension<br />Dakar, Sénégal</span>
+                <span className="ml-3">Liberté 6 Extension Camp Pénal<br />Dakar, Sénégal</span>
               </li>
               <li className="flex items-center">
                 <FaPhoneAlt className="h-4 w-4 text-blue-500" />

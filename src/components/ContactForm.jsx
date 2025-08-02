@@ -202,7 +202,7 @@ const ContactForm = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-800">Notre adresse</h4>
                     <p className="mt-1 text-gray-600">
-                      Liberté 6 Extension<br />
+                      Liberté 6 Extension Camp Pénal<br />
                       Dakar, Sénégal
                     </p>
                   </div>
@@ -240,9 +240,6 @@ const ContactForm = () => {
                     <h4 className="text-lg font-medium text-gray-800">Horaires d'ouverture</h4>
                     <p className="mt-1 text-gray-600">
                       Lundi - Vendredi : 8h00 - 17h00
-                    </p>
-                    <p className="mt-1 text-gray-600">
-                      Dimanche : Fermé
                     </p>
                   </div>
                 </div>
