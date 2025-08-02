@@ -226,9 +226,14 @@ const ContactForm = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-800">Téléphone</h4>
-                    <p className="mt-1 text-gray-600">
-                      <a href="tel:+221338671855" className="hover:text-blue-600 transition-colors">+221 33 867 18 55</a>
-                    </p>
+                    <div className="mt-1 space-y-1">
+                      <p className="text-gray-600">
+                        <a href="tel:+221338671855" className="hover:text-blue-600 transition-colors">+221 33 867 18 55</a>
+                      </p>
+                      <p className="text-gray-600">
+                        <a href="tel:+221774503939" className="hover:text-blue-600 transition-colors">+221 77 450 39 39</a>
+                      </p>
+                    </div>
                   </div>
                 </div>
 

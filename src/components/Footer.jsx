@@ -65,9 +65,12 @@ const Footer = () => {
                 <FaMapMarkerAlt className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
                 <span className="ml-3">Liberté 6 Extension Camp Pénal<br />Dakar, Sénégal</span>
               </li>
-              <li className="flex items-center">
-                <FaPhoneAlt className="h-4 w-4 text-blue-500" />
-                <a href="tel:+221338671855" className="ml-3 hover:text-blue-400">+221 33 867 18 55</a>
+              <li className="flex items-start">
+                <FaPhoneAlt className="h-4 w-4 text-blue-500 mt-1.5 flex-shrink-0" />
+                <div className="ml-3 space-y-1">
+                  <a href="tel:+221338671855" className="block hover:text-blue-400">+221 33 867 18 55</a>
+                  <a href="tel:+221774503939" className="block hover:text-blue-400">+221 77 450 39 39</a>
+                </div>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="h-4 w-4 text-blue-500" />
