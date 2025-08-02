@@ -5,7 +5,7 @@ import ImageModal from './ImageModal';
 const projects = [
   {
     title: 'Siège du Ministère de la Santé et de l\'Action Sociale',
-    description: 'Consultant individuel : Assistance à la maîtrise d\'ouvrage pour la construction du Ministère de la Santé et de l\'Action Sociale dans le cadre du Programme National de Développement Sanitaire (PNDS) / Convention AGETIP / Ministère de la Santé Financement Banque Mondiale / État du Sénégal (5.4 M$US).',
+    description: 'Consultant individuel : Assistance à la maîtrise d\'ouvrage pour la construction du Ministère de la Santé et de l\'Action Sociale dans le cadre du Programme National de Développement Sanitaire (PNDS) / Convention AGETIP / Ministère de la Santé Financement Banque Mondiale / État du Sénégal (5,4 M$US).',
     image: '/assets/images/MSAS.webp',
   },
   {
