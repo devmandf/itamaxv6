@@ -66,12 +66,23 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-5">
-              <img 
-                src="/assets/images/itamax-logo-header.svg" 
-                alt="Logo Itamax" 
-                className="h-6 w-auto"
-              />
-              <span className="text-2xl font-bold ml-1 -mt-0.75 uppercase" style={{ color: 'rgba(67, 82, 235, 1)' }}>itamax</span>
+              <a 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="flex items-center gap-2"
+              >
+                <img 
+                  src="/assets/images/itamax-logo-header.svg" 
+                  alt="Logo Itamax" 
+                  className="h-6 w-auto"
+                />
+                <span className="text-2xl font-bold ml-1 -mt-0.75 uppercase hover:cursor-pointer" style={{ color: 'rgba(67, 82, 235, 1)' }}>
+                  itamax
+                </span>
+              </a>
             </div>
             
             <nav className="hidden md:block">

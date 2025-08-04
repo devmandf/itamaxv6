@@ -92,8 +92,8 @@ const Footer = () => {
           <p className="text-sm text-gray-500">
             &copy; {currentYear} ITAMAX. Tous droits réservés.
           </p>
-          <div className="text-sm text-gray-500 hover:text-white transition-colors">
-            Conception du site : <a href="mailto:devmandf@gmail.com" className="hover:underline font-['Jura'] tracking-wider">devmandf@gmail.com</a>
+          <div className="text-sm text-gray-500">
+            Conception du site : <a href="mailto:devmandf@gmail.com" className="text-orange-500 font-bold hover:underline font-['Jura'] tracking-wider">devmandf@gmail.com</a>
           </div>
         </div>
       </div>
