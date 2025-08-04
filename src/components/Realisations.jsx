@@ -93,7 +93,7 @@ const projects = {
       id: 9,
       title: 'Construction des Lycées Nation-Armée pour la Qualité et l\'Équité (Lynaqe) de Sédhiou et Kaffrine, Sénégal',
       category: 'institutionnel',
-      description: 'Consultant individuel – Banque Mondiale Sénégal : appui aux études et à la supervision des lycées LYNAQE de Sédhiou et Kaffrine (12 milliards F CFA).',
+      description: 'Consultant individuel – Banque Mondiale Sénégal : appui aux études et à la supervision des LYNAQE de Sédhiou et Kaffrine (12 milliards F CFA).',
       image: ConstructiondesLYNAQEdeSédhiou,
       showViewPhotos: true,
       images: [
@@ -105,7 +105,7 @@ const projects = {
       id: 1,
       title: 'Complexe Royal de Kananga (18 000 élèves), République Démocratique du Congo, Kinshasa',
       category: 'institutionnel',
-      description: 'Projet de réhabilitation du Complexe scolaire de Kananga pour moderniser l\'éducation.',
+      description: 'Assistance à la Banque Mondiale pour superviser et relancer la réhabilitation du Complexe Royal de Kananga et de l’école de Buena Munto (budget \~25 M USD), incluant coordination des entreprises et résolution des problèmes d’exécution.',
       image: kananga,
     },
     {
@@ -120,7 +120,7 @@ const projects = {
       id: 77,
       title: 'Centre Hospitalier National Psychiatrique',
       category: 'public',
-      description: 'CHNP de Thiaroye',
+      description: 'Études et suivi des travaux pour la construction d’unités d’addictologie et de diagnostic au Centre Hospitalier National Psychiatrique de Thiaroye (budget \~200 M F CFA, honoraires \~24,65 M F CFA).',
       image: '/assets/images/CHNP01.webp',
       showViewPhotos: true,
       images: [
