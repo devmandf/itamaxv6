@@ -5,6 +5,10 @@ import ImageModal from './ImageModal';
 
 // Import des images locales depuis le dossier public
 const kananga = '/assets/images/projet-BM-Kinshasa.webp';
+const kanangaW1_1 = '/assets/images/KanangaW1 (1).webp';
+const kanangaW1_2 = '/assets/images/KanangaW1 (2).webp';
+const kanangaW1_3 = '/assets/images/KanangaW1 (3).webp';
+const kanangaW1_4 = '/assets/images/KanangaW1 (4).webp';
 const aua = '/assets/images/CEA (1).webp';
 const ceaProjects = [
   { 
@@ -79,8 +83,21 @@ const ceaProjects = [
 const hopitalMbour = '/assets/images/hopital-mbour.webp';
 const villaOceane = '/assets/images/villa-océane.webp';
 const cfpt = '/assets/images/CFPT-B1.webp';
+const cfptB2 = '/assets/images/CFPT-B2.webp';
+const cfptB3 = '/assets/images/CFPT-B3.webp';
+const cfptB4 = '/assets/images/CFPT-B4.webp';
+const cfptB5 = '/assets/images/CFPT-B5.webp';
 const cfptTypeA = '/assets/images/TypeA.webp';
+const typeA2 = '/assets/images/TypeA (2).webp';
+const typeA3 = '/assets/images/TypeA (3).webp';
+const typeA4 = '/assets/images/TypeA (4).webp';
+const typeA5 = '/assets/images/TypeA (5).webp';
+const typeA6 = '/assets/images/TypeA (6).webp';
 const abattoirstivaouane = '/assets/images/abattoirstivaouane02.webp';
+const abattoirstivaouane04 = '/assets/images/abattoirstivaouane04.webp';
+const abattoirstivaouane05 = '/assets/images/abattoirstivaouane05.webp';
+const abattoirstivaouane06 = '/assets/images/abattoirstivaouane06.webp';
+const abattoirstivaouane07 = '/assets/images/abattoirstivaouane07.webp';
 const villambour = '/assets/images/Villa-Type-Nord-Américaine-(01).webp';
 const villaOuestFoire2 = '/assets/images/Villa-Ouest-Foire-(02).webp';
 const gareFret = '/assets/images/projet-amo-garefretlss-01sur01.webp';
@@ -107,6 +124,14 @@ const projects = {
       category: 'institutionnel',
       description: 'Assistance à la Banque Mondiale pour superviser et relancer la réhabilitation du Complexe Royal de Kananga et de l’école de Buena Munto (budget \~25 M USD), incluant coordination des entreprises et résolution des problèmes d’exécution.',
       image: kananga,
+      showViewPhotos: true,
+      images: [
+        kananga,
+        kanangaW1_1,
+        kanangaW1_2,
+        kanangaW1_3,
+        kanangaW1_4
+      ],
     },
     {
       id: 2,
@@ -120,7 +145,7 @@ const projects = {
       id: 77,
       title: 'Centre Hospitalier National Psychiatrique',
       category: 'public',
-      description: 'Études et suivi des travaux pour la construction d’unités d’addictologie et de diagnostic au Centre Hospitalier National Psychiatrique de Thiaroye (budget \~200 M F CFA, honoraires \~24,65 M F CFA).',
+      description: 'Études et suivi des travaux pour la construction d’unités d’addictologie et de diagnostic au Centre Hospitalier National Psychiatrique de Thiaroye (budget \~200 M F CFA).',
       image: '/assets/images/CHNP01.webp',
       showViewPhotos: true,
       images: [
@@ -135,6 +160,15 @@ const projects = {
       category: 'public',
       description: 'Prototype A sur 7 ha : 1295 m² de salles de cours, 780 m² d’ateliers pratiques, hébergements, équipements annexes, voiries et espaces verts.',
       image: cfptTypeA,
+      showViewPhotos: true,
+      images: [
+        cfptTypeA,
+        typeA2,
+        typeA3,
+        typeA4,
+        typeA5,
+        typeA6
+      ],
     },
     {
       id: 3,
@@ -142,6 +176,14 @@ const projects = {
       category: 'public',
       description: 'Projet sur 10 ha incluant salles, ateliers, hébergements et voiries, pour 1,18 milliard F CFA par centre, soit 24,3 milliards pour 15 centres.',
       image: cfpt,
+      showViewPhotos: true,
+      images: [
+        cfpt,
+        cfptB2,
+        cfptB3,
+        cfptB4,
+        cfptB5
+      ],
     },
     {
       id: 4,
@@ -160,8 +202,16 @@ const projects = {
       id: 5,
       title: 'Construction des Abattoirs de Tivaouane, Sénégal',
       category: 'public',
-      description: 'Projet AGETIP de 10 ha : construction d\'un complexe abattoir complet pour 1,1 milliard F CFA plus 83 millions d\'honoraires.',
+      description: 'Projet AGETIP de 10 ha : construction d\'un complexe abattoir complet pour 1,1 milliard F CFA.',
       image: abattoirstivaouane,
+      showViewPhotos: true,
+      images: [
+        abattoirstivaouane,
+        abattoirstivaouane04,
+        abattoirstivaouane05,
+        abattoirstivaouane06,
+        abattoirstivaouane07
+      ],
     },
     {
       id: 13,
@@ -169,6 +219,13 @@ const projects = {
       category: 'public',
       description: 'Études architecturales et techniques, ainsi que du suivi des travaux pour la construction des abattoirs de Mbour, pour un coût d\'environ 1,3 milliard FCFA.',
       image: '/assets/images/AbattoirMbour.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/AbattoirMbour.webp',
+        '/assets/images/abattoirsmbour(02).webp',
+        '/assets/images/abattoirsmbour(3).webp',
+        '/assets/images/abattoirsmbour(4).webp'
+      ],
     },
     {
       id: 14,
@@ -331,6 +388,13 @@ const projects = {
       category: 'institutionnel',
       description: 'Appui technique au Projet d\'Appui à l\'Enseignement Supérieur (PAES) financé par la Banque mondiale au Burkina Faso : études et suivi des extensions et rénovations d\'infrastructures universitaires à Ouagadougou (BUC, labos, voirie, crèche, salles, amphithéâtres).',
       image: '/assets/images/BUC.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/BUC.webp',
+        '/assets/images/BUC2.webp',
+        '/assets/images/BUC3.webp',
+        '/assets/images/BUC4.webp'
+      ],
     },
     {
       id: 12,
