@@ -21,6 +21,28 @@ Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche
 - **Email** : itamax@orange.sn
 - **Horaires d'ouverture** : Lundi - Vendredi : 8h00 - 17h00
 
+### 🖼️ Règles pour la Modale d'Images
+
+#### Comportement du Chargement
+- **Pas de saut de contenu** :
+  - L'image et le loader doivent partager le même espace
+  - Pas de hauteur fixe pour permettre une adaptation naturelle
+  - Le loader doit apparaître exactement au même endroit que l'image
+
+#### Règles Stylistiques
+- **Pas de fond noir** :
+  - Ne pas ajouter de `bg-black` au conteneur d'image
+  - Laisser le fond transparent pour une meilleure intégration
+- **Chargement fluide** :
+  - Utiliser `visibility: hidden` au lieu de retirer l'image du DOM
+  - Positionner le loader de manière absolue au centre du conteneur
+
+#### Bonnes Pratiques
+1. Toujours maintenir le ratio d'aspect naturel des images
+2. Éviter les hauteurs fixes qui pourraient tronquer le contenu
+3. S'assurer que le loader reste centré pendant le chargement
+4. Ne pas modifier ces règles sans accord explicite
+
 ### 🏗️ Système de Filtrage des Projets
 
 #### Structure Hiérarchique

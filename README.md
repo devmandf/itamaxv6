@@ -39,7 +39,12 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
   - Effet de lévitation au survol
   - Ombre portée dynamique
 - Galerie de projets avec aperçu des réalisations
-- Modal de visualisation des détails des projets avec navigation entre images
+- Modal de visualisation des détails des projets avec navigation fluide entre images
+  - Chargement sans saut de contenu
+  - Animation fluide entre les images
+  - Indicateurs de position clairs
+  - Navigation au clavier (flèches et Échap)
+  - Adaptatif à toutes les tailles d'écran
 - Intégration de Google Maps avec localisation précise
 - Formulaire de contact avec validation et envoi par email
 - Pied de page complet avec coordonnées et plan d'accès

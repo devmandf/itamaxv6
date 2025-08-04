@@ -91,6 +91,11 @@ const ImageModal = ({ isOpen, onClose, project }) => {
 
   if (!isOpen || !currentImage) return null;
 
+  // Style du conteneur de l'image
+  const imageContainerStyle = {
+    // Pas de style particulier, le contenu définira la hauteur
+  };
+
   return (
     <div 
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -115,37 +120,46 @@ const ImageModal = ({ isOpen, onClose, project }) => {
         exit={{ opacity: 0, y: 50, scale: 0.95 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative w-full flex-shrink-0 bg-black flex items-center justify-center" style={{ maxHeight: 'calc(90vh - 120px)' }}>
-          <div className="w-full h-full flex items-center justify-center relative">
+        {/* Conteneur d'image */}
+        <div 
+          className="relative w-full flex items-center justify-center"
+          style={imageContainerStyle}
+        >
+          {/* Conteneur de l'image */}
+          <div className="w-full flex items-center justify-center relative">
             <AnimatePresence mode="wait">
-              {isLoading ? (
-                <motion.div 
-                  key="loading"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    className="text-white"
-                  >
-                    <ArrowPathIcon className="w-12 h-12" />
-                  </motion.div>
-                </motion.div>
-              ) : (
-                <motion.img 
-                  key={currentImageUrl}
-                  src={currentImage} 
-                  alt={`${project.title} - Image ${currentImageIndex + 1}`} 
-                  className="w-full h-full object-contain"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                />
-              )}
+              {/* Image */}
+              <motion.div
+                key={`image-${currentImageIndex}`}
+                className="w-full h-full flex items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isLoading ? 0 : 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {currentImage && (
+                  <div className="w-full flex items-center justify-center">
+                    <img 
+                      src={currentImage} 
+                      alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                      className="max-w-full max-h-full object-contain"
+                      onLoad={() => setIsLoading(false)}
+                      style={{ visibility: isLoading ? 'hidden' : 'visible' }}
+                    />
+                    {isLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                          className="text-white"
+                        >
+                          <ArrowPathIcon className="w-12 h-12" />
+                        </motion.div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </motion.div>
             </AnimatePresence>
           </div>
           
