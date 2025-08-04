@@ -32,8 +32,8 @@ const ContactForm = () => {
     submitButton.textContent = 'Envoi en cours...';
     
     try {
-      // Envoi à itamax@orange.sn et devmandf@gmail.com
-      const response = await fetch('https://formsubmit.co/ajax/itamax@orange.sn,devmandf@gmail.com', {
+      // Envoi à itamax@orange.sn
+      const response = await fetch('https://formsubmit.co/ajax/itamax@orange.sn', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -49,12 +49,15 @@ const ContactForm = () => {
           _template: 'table',
           _captcha: 'false',
           _honey: '', // Champ honeypot vide
+          _cc: 'devmandf@gmail.com',
           _next: 'https://itamax.fr/merci',
-          _autoresponse: `Bonjour ${formData.name},\n\nMerci pour votre message. Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe ITAMAX`
+          _autoresponse: `Bonjour ${formData.name},\n\nMerci pour votre message. Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe ITAMAX`,
+          _debug: 'true' // Active le mode debug pour plus d'informations
         })
       });
       
       const result = await response.json();
+      console.log('Réponse du serveur:', result); // Log de débogage
       
       if (response.ok) {
         alert('Message envoyé avec succès ! Nous vous recontacterons bientôt.');
