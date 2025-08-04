@@ -21,8 +21,18 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 - Animations fluides avec Framer Motion
 - Système de filtrage hiérarchique des projets
   - Catégories principales : AMO, Appuis institutionnels, Projets d'études
-  - Sélection automatique de 'Bâtiments institutionnels' lors du clic sur 'Projets d'études'
-  - Sous-catégories pour les projets d'études : Bâtiments institutionnels, Immeubles et Villa
+  - Comportement des filtres :
+    - Un seul filtre principal peut être actif à la fois
+    - Le filtre "Projets Études" :
+      - S'affiche en bleu foncé (bg-blue-600) lorsqu'actif
+      - Affiche les sous-filtres "Bâtiments institutionnels" et "Immeubles et Villa"
+      - Sélectionne automatiquement "Bâtiments institutionnels" par défaut
+      - Maintient l'espacement même après fermeture des sous-filtres
+    - Les sous-filtres :
+      - S'affichent en dessous du filtre parent
+      - Ont une largeur limitée à celle du bouton parent
+      - Utilisent un bleu plus clair (bg-blue-400) pour se différencier
+      - Restent visibles lors de la navigation entre les sous-catégories
 - Cartes de projet avec effets de survol élégants
   - Dégradé de bleu clair à blanc
   - Bordure bleue subtile

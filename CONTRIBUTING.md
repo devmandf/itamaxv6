@@ -21,21 +21,50 @@ Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche
 - **Email** : itamax@orange.sn
 - **Horaires d'ouverture** : Lundi - Vendredi : 8h00 - 17h00
 
-### Catégories de projets
-Les projets sont organisés en un système hiérarchique de filtres :
+### 🏗️ Système de Filtrage des Projets
 
-#### Catégories principales
-- **Assistance à Maîtrise d'Ouvrage Déléguée (AMO)**
-- **Appuis institutionnels**
-- **Projets Études Architecturales et Techniques**
-  - Bâtiments institutionnels
-  - Immeubles et Villa
+#### Structure Hiérarchique
+```
+- Assistance à Maîtrise d'Ouvrage Déléguée (AMO)
+- Appuis institutionnels
+- Projets Études Architecturales et Techniques (PEAT)
+  └── Bâtiments institutionnels (sélectionné par défaut)
+  └── Immeubles et Villa
+```
 
-#### Comportement des filtres
-- Un seul filtre principal peut être actif à la fois
-- Le filtre "Projets Études" affiche automatiquement les projets de la catégorie "Bâtiments institutionnels"
-- Les sous-filtres restent visibles pour une navigation facile
-- La sélection d'un sous-filtre met à jour l'affichage des projets correspondants
+#### Règles de Comportement
+
+**Filtre Principal (PEAT)**
+- S'affiche en bleu foncé (`bg-blue-600`) lorsqu'actif
+- Au clic :
+  - Affiche les sous-filtres s'ils sont masqués
+  - Cache les sous-filtres s'ils sont visibles
+  - Sélectionne automatiquement "Bâtiments institutionnels"
+  - Conserve l'espacement même après fermeture
+
+**Sous-Filtres**
+- Positionnement :
+  - Directement sous le bouton parent
+  - Largeur égale au bouton parent
+  - Espacement préservé après affichage initial
+- Style :
+  - Bleu clair (`bg-blue-400`) pour l'élément actif
+  - Ombre (`shadow-md`) sur l'élément actif
+  - Texte blanc pour un bon contraste
+  - Taille de police réduite (`text-sm`)
+
+**Règles d'État**
+- `showSubFilters` : Contrôle la visibilité des sous-menus
+- `hasShownSubFilters` : Maintient l'espacement après premier affichage
+- `activeFilter` : Gère la sélection active (peut être 'public' ou 'particulier' pour les sous-filtres)
+
+**Bonnes Pratiques**
+1. Toujours utiliser `e.stopPropagation()` sur les clics des sous-filtres
+2. Mettre à jour `hasShownSubFilters` lors de l'affichage initial
+3. Conserver la cohérence des couleurs :
+   - Bouton principal actif : `bg-blue-600`
+   - Sous-filtre actif : `bg-blue-400`
+4. Maintenir l'accessibilité avec des attributs ARIA appropriés
 
 ### Configuration du Référencement (SEO)
 
