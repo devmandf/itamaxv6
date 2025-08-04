@@ -1,30 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
 const ImageModal = ({ isOpen, onClose, project }) => {
   if (!isOpen || !project) return null;
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentImage, setCurrentImage] = useState(null);
   
   // Récupérer les images et gérer à la fois les tableaux simples et les tableaux d'objets
   const images = project.images ? 
     (Array.isArray(project.images[0]) ? project.images : project.images) 
     : (project.image ? [project.image] : []);
 
-  const currentImage = images[currentImageIndex];
-  const currentImageUrl = currentImage ? 
-    (typeof currentImage === 'string' ? currentImage : (currentImage.image || '')) 
+  // Chargement de l'image courante
+  const currentImageData = images[currentImageIndex];
+  const currentImageUrl = currentImageData ? 
+    (typeof currentImageData === 'string' ? currentImageData : (currentImageData.image || '')) 
     : '';
   
   // Récupérer la description de l'image courante si elle existe, sinon utiliser la description du projet
   let currentDescription = project?.description;
-  if (currentImage && typeof currentImage === 'object' && currentImage.description) {
-    currentDescription = currentImage.description;
+  if (currentImageData && typeof currentImageData === 'object' && currentImageData.description) {
+    currentDescription = currentImageData.description;
   }
 
   // Vérifier si le projet a plusieurs images
   const hasMultipleImages = images.length > 1;
+
+  // Gérer le chargement des images
+  const loadImage = useCallback((url) => {
+    if (!url) return;
+    
+    setIsLoading(true);
+    const img = new window.Image();
+    img.src = url;
+    
+    img.onload = () => {
+      setCurrentImage(url);
+      setIsLoading(false);
+    };
+    
+    img.onerror = () => {
+      console.error('Erreur de chargement de l\'image:', url);
+      setIsLoading(false);
+    };
+  }, []);
+
+  // Charger l'image quand l'URL change
+  useEffect(() => {
+    if (currentImageUrl) {
+      loadImage(currentImageUrl);
+    }
+  }, [currentImageUrl, loadImage]);
 
   // Gérer la navigation entre les images
   const goToNextImage = () => {
@@ -71,6 +100,7 @@ const ImageModal = ({ isOpen, onClose, project }) => {
       
       <motion.div 
         className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col z-10"
+        style={{ maxHeight: '90vh' }}
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={{ 
           opacity: 1, 
@@ -85,13 +115,39 @@ const ImageModal = ({ isOpen, onClose, project }) => {
         exit={{ opacity: 0, y: 50, scale: 0.95 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative flex-1 overflow-hidden flex items-center justify-center">
-          <img 
-            src={currentImageUrl} 
-            alt={`${project.title} - Image ${currentImageIndex + 1}`} 
-            className="w-full h-full object-contain max-h-[70vh]"
-            key={currentImageIndex}
-          />
+        <div className="relative w-full flex-shrink-0 bg-black flex items-center justify-center" style={{ maxHeight: 'calc(90vh - 120px)' }}>
+          <div className="w-full h-full flex items-center justify-center relative">
+            <AnimatePresence mode="wait">
+              {isLoading ? (
+                <motion.div 
+                  key="loading"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                    className="text-white"
+                  >
+                    <ArrowPathIcon className="w-12 h-12" />
+                  </motion.div>
+                </motion.div>
+              ) : (
+                <motion.img 
+                  key={currentImageUrl}
+                  src={currentImage} 
+                  alt={`${project.title} - Image ${currentImageIndex + 1}`} 
+                  className="w-full h-full object-contain"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              )}
+            </AnimatePresence>
+          </div>
           
           {hasMultipleImages && (
             <>
@@ -146,7 +202,7 @@ const ImageModal = ({ isOpen, onClose, project }) => {
           )}
         </div>
         
-        <div className="p-4 bg-[rgba(31,41,55,1)] border-t border-gray-700">
+        <div className="p-4 bg-[rgba(31,41,55,1)] border-t border-gray-700 min-h-[120px]">
           <h3 className="text-xl font-semibold text-white">{project.title}</h3>
           {currentDescription && (
             <p className="mt-2 text-gray-300">{currentDescription}</p>

@@ -144,11 +144,11 @@ const Header = () => {
               </li>
               <li>
                 <NavLink 
-                  href="#portfolio" 
+                  href="#realisations" 
                   onClick={closeMenu} 
                   className="inline-block py-2 text-lg text-gray-700 hover:text-blue-600 transition-colors font-['Jura'] font-semibold"
                 >
-Nos Domaines d'Interventions
+                  Nos Domaines d'Interventions
                 </NavLink>
               </li>
               <li>
