@@ -421,7 +421,8 @@ const Realisations = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSubFilters, setShowSubFilters] = useState(false);
-  const [portfolioItems, setPortfolioItems] = useState(projects.amo); // Initialiser avec les projets AMO
+  const [hasShownSubFilters, setHasShownSubFilters] = useState(false);
+  const [portfolioItems, setPortfolioItems] = useState(projects.amo);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -434,21 +435,28 @@ const Realisations = () => {
     setTimeout(() => setSelectedProject(null), 300);
   };
 
-  const handleFilterClick = (filter, isMainFilter = true) => {
+  const handleFilterClick = (filter, isSubFilter = false) => {
     if (filter === 'etudes') {
-      // Si on clique sur 'etudes', on affiche les sous-filtres et on sélectionne automatiquement 'public'
-      setShowSubFilters(true);
-      setActiveFilter('public');
-      setPortfolioItems(projects['public']);
+      // Si on clique sur 'etudes', on affiche les sous-filtres
+      const shouldShow = !showSubFilters;
+      setShowSubFilters(shouldShow);
+      
+      // Si on affiche les sous-filtres, on sélectionne 'public' par défaut
+      if (shouldShow) {
+        setActiveFilter('public');
+        setPortfolioItems(projects.public || []);
+        setHasShownSubFilters(true);
+      }
+      return;
     } else if (filter === 'public' || filter === 'particulier') {
       // Si on clique sur un sous-filtre
       setActiveFilter(filter);
-      setPortfolioItems(projects[filter]);
+      setPortfolioItems(projects[filter] || []);
       setShowSubFilters(true);
     } else {
       // Pour les autres filtres (amo, institutionnel)
       setActiveFilter(filter);
-      setPortfolioItems(projects[filter]);
+      setPortfolioItems(projects[filter] || []);
       setShowSubFilters(false);
     }
   };
@@ -470,49 +478,62 @@ const Realisations = () => {
         </motion.div>
 
         {/* Filtres principaux */}
-        <div className="flex flex-wrap justify-center gap-4 mb-4">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {[
             { label: 'Assistance à Maîtrise d\'Ouvrage Déléguée (AMO)', key: 'amo' },
             { label: 'Appuis institutionnels', key: 'institutionnel' },
-            { label: 'Projets Études Architecturales et Techniques', key: 'etudes' }
-          ].map(({ label, key }) => (
-            <button
-              key={key}
-              onClick={() => handleFilterClick(key)}
-              className={`px-6 py-2 rounded-full font-medium transition-colors border border-gray-200 ${
-                activeFilter === key || 
-                (key === 'etudes' && (activeFilter === 'public' || activeFilter === 'particulier' || activeFilter === 'etudes'))
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {/* Sous-filtres pour Études */}
-        {(showSubFilters || activeFilter === 'public' || activeFilter === 'particulier') && (
-          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fadeIn">
-            {[
-              { label: 'Bâtiments institutionnels', key: 'public' },
-              { label: 'Immeubles et Villa', key: 'particulier' }
-            ].map(({ label, key }) => (
+            { 
+              label: 'Projets Études Architecturales et Techniques', 
+              key: 'etudes',
+              subFilters: [
+                { label: 'Bâtiments institutionnels', key: 'public' },
+                { label: 'Immeubles et Villa', key: 'particulier' }
+              ]
+            }
+          ].map(({ label, key, subFilters }) => (
+            <div key={key} className="relative">
               <button
-                key={key}
-                onClick={() => handleFilterClick(key, false)}
-                className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                  activeFilter === key
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                onClick={() => handleFilterClick(key)}
+                className={`px-6 py-2 rounded-full font-medium transition-colors border border-gray-200 whitespace-nowrap ${
+                  key === 'etudes' && (activeFilter === 'public' || activeFilter === 'particulier')
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : activeFilter === key
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
                 }`}
               >
                 {label}
               </button>
-            ))}
-          </div>
-        )}
+              
+              {/* Sous-filtres pour Études */}
+              {key === 'etudes' && (showSubFilters || activeFilter === 'public' || activeFilter === 'particulier') && (
+                <div className="absolute left-0 right-0 mt-1 flex flex-col items-center space-y-1 z-10">
+                  {subFilters.map(({ label: subLabel, key: subKey }) => (
+                    <button
+                      key={subKey}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleFilterClick(subKey, true);
+                      }}
+                      className={`px-4 py-1 rounded-full text-sm font-medium transition-colors border border-gray-200 whitespace-nowrap w-full text-center ${
+                        activeFilter === subKey
+                          ? 'bg-blue-400 text-white border-blue-400 shadow-md'
+                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                      style={{ minWidth: '200px' }}
+                    >
+                      {subLabel}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
+        {/* Espace pour les sous-menus */}
+        <div className={`transition-all duration-300 ${(showSubFilters || hasShownSubFilters) ? 'h-20' : 'h-0'}`}></div>
+        
         {/* Grille de projets */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((project, index) => (
