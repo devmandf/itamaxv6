@@ -32,7 +32,7 @@ const ContactForm = () => {
     submitButton.textContent = 'Envoi en cours...';
     
     try {
-      const response = await fetch('https://formsubmit.co/ajax/vlamidronbaltazar@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/itamax@orange.sn', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

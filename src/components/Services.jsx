@@ -24,7 +24,7 @@ const services = [
     icon: <LightBulbIcon className="w-10 h-10 text-blue-600" />
   },
   {
-    title: "Gestion de Projet",
+    title: "Management et Gestion de Projets",
     description: "Supervision et coordination professionnelles de toutes les phases du projet pour assurer une livraison dans les délais, le respect des normes de qualité et du budget.",
     icon: <ClipboardDocumentListIcon className="w-10 h-10 text-blue-600" />
   }

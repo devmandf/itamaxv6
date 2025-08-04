@@ -399,9 +399,9 @@ const Realisations = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-4">Nos Réalisations</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-4">Nos Domaines d'Interventions</h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Découvrez nos réalisations à travers différents secteurs d'activité
+            Découvrez nos domaines d'intervention à travers différents secteurs d'activité
           </p>
         </motion.div>
 
