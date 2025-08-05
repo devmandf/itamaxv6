@@ -78,6 +78,10 @@ const ceaProjects = [
   {
     image: '/assets/images/CEA (17).webp',
     description: "Centre d'Excellence pour le Changement Climatique, la Biodiversité et l'Agriculture Durable (CCBAD), Abidjan, Côte d'Ivoire."
+  },
+  {
+    image: '/assets/images/CEA (18).webp',
+    description: "Centre d'Excellence pour le Changement Climatique, la Biodiversité et l'Agriculture Durable (CCBAD), Abidjan, Côte d'Ivoire."
   }
 ];
 const hopitalMbour = '/assets/images/hopital-mbour.webp';
@@ -106,6 +110,46 @@ const ConstructiondesLYNAQEdeSédhiou = '/assets/images/ConstructiondesLYNAQEdeS
 
 const projects = {
   all: [
+    {
+      id: 101,
+      title: 'Siège du Ministère de l\'Environnement et de la Protection de la Nature (MEPN)',
+      category: 'public',
+      description: 'Bâtiment administratif éco-conçu intégrant des solutions durables et des technologies vertes pour un impact environnemental minimal.',
+      image: '/assets/images/MEPN01.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/MEPN01.webp',
+        '/assets/images/MEPN02.webp',
+        '/assets/images/MEPN03.webp',
+        '/assets/images/MEPN04.webp',
+      ]
+    },
+    {
+      id: 100,
+      title: 'Siège de la Société Sénégalaise de Pêche et d\'Armement (SOPASEN)',
+      category: 'public',
+      description: 'Siège moderne et fonctionnel pour le leader sénégalais de la pêche et de l\'armement maritime.',
+      image: '/assets/images/sopasen01.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/sopasen01.webp',
+        '/assets/images/sopasen02.webp',
+        '/assets/images/sopasen03.webp'
+      ]
+    },
+    {
+      id: 102,
+      title: 'Siège Départemental de l\'Élevage et des Productions Animales (SDEPA), Guinguinéo, Sénégal',
+      category: 'public',
+      description: 'Études architecturales, techniques et suivi des travaux pour la construction du siège départemental de l\'élevage à Guinguinéo (600 m²), pour un coût d\'environ 150 millions F CFA.',
+      image: '/assets/images/SDEPAGuinguinéo01.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/SDEPAGuinguinéo01.webp',
+        '/assets/images/SDEPAGuinguinéo02.webp',
+        '/assets/images/SDEPAGuinguinéo03.webp'
+      ]
+    },
     {
       id: 9,
       title: 'Construction des Lycées Nation-Armée pour la Qualité et l\'Équité (Lynaqe) de Sédhiou et Kaffrine, Sénégal',
@@ -239,6 +283,32 @@ const projects = {
         '/assets/images/HôpNDIOUM.webp'
       ],
       image: '/assets/images/HôpStLouis.webp', // Gardé pour la rétrocompatibilité
+    },
+    {
+      id: 15,
+      title: 'Extension et réhabilitations du Centre de Santé Aristide Mensah de Yeumbeul',
+      category: 'public',
+      description: 'Projet sur plus de 3000 m² pour les urgences, la maternité, l’hospitalisation, la formation, etc., avec un coût estimé entre 800 millions et 1,126 milliard F CFA.',
+      image: '/assets/images/CS-Yeumbeul01.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/CS-Yeumbeul01.webp',
+        '/assets/images/CS-Yeumbeul02.webp'
+      ]
+    },
+    {
+      id: 16,
+      title: 'Siège de l\'ONFP à Saint-Louis',
+      category: 'public',
+      description: 'Projet sur 1100 m² de bureaux avec salles, centre de formation, restaurant et 150 places de parking, pour un coût d\'environ 500 millions F CFA.',
+      image: '/assets/images/ONFPSTLOUIS01.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/ONFPSTLOUIS01.webp',
+        '/assets/images/ONFPSTLOUIS02.webp',
+        '/assets/images/ONFPSTLOUIS03.webp',
+        '/assets/images/ONFPSTLOUIS04.webp'
+      ]
     },
     {
       id: 6,
@@ -401,7 +471,19 @@ const projects = {
       title: 'Construction de plus de 650 Salles de Classe, Mauritanie',
       category: 'institutionnel',
       description: 'Mission d\'appui à la Banque mondiale en Mauritanie : audit, évaluation et suivi de la construction d\'environ 650 salles de classe dans le cadre du Projet d\'Appui au Secteur de l\'Éducation de Base (PASEB I & II) dans les régions du Gorgol, Guidimakha, Assaba, Hodh Ech Chargui et Hodh El Gharbi.',
-      image: '/assets/images/Maurita650.webp',
+      image: '/assets/images/Maurita650.webp'
+    },
+    {
+      id: 1000,
+      title: 'Études Architecturales et Techniques pour un Projet Type d\'Hôtel de Ville',
+      category: 'public',
+      description: 'Projet d\'Hôtel de Ville avec bureaux, salle de conférence pour 150 personnes, état civil, secrétariat, pour un coût d\'environ 150 millions F CFA.',
+      image: '/assets/images/Hoteldeville01.webp',
+      showViewPhotos: true,
+      images: [
+        '/assets/images/Hoteldeville01.webp',
+        '/assets/images/Hoteldeville02.webp'
+      ]
     }
   ],
   institutionnel: [],
@@ -487,7 +569,7 @@ const Realisations = () => {
               key: 'etudes',
               subFilters: [
                 { label: 'Bâtiments institutionnels', key: 'public' },
-                { label: 'Immeubles et Villa', key: 'particulier' }
+                { label: 'Résidences et Villas', key: 'particulier' }
               ]
             }
           ].map(({ label, key, subFilters }) => (
