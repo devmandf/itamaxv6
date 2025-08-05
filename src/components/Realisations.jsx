@@ -158,7 +158,7 @@ const projects = {
       id: 10,
       title: 'Centre de Formation Professionnelle et Technique de TYPE A, Sénégal',
       category: 'public',
-      description: 'Prototype A sur 7 ha : 1295 m² de salles de cours, 780 m² d’ateliers pratiques, hébergements, équipements annexes, voiries et espaces verts.',
+      description: 'Projet sur 7 hectares comprenant salles de cours (1 295 m²), ateliers pratiques (780 m²), espaces annexes et infrastructures, commandité par OPUS en partenariat public-privé (PPP) avec le Ministère de la Formation professionnelle, pour un déploiement dans 30 départements (2020).',
       image: cfptTypeA,
       showViewPhotos: true,
       images: [
@@ -174,7 +174,7 @@ const projects = {
       id: 3,
       title: 'Centre de Formation Professionnelle et Technique de TYPE B, Sénégal',
       category: 'public',
-      description: 'Projet sur 10 ha incluant salles, ateliers, hébergements et voiries, pour 1,18 milliard F CFA par centre, soit 24,3 milliards pour 15 centres.',
+      description: 'Projet sur 10 hectares comprenant salles de cours (1 492 m²), ateliers pratiques (1 133 m²), espaces verts et infrastructures annexes, commandité par OPUS en partenariat public-privé (PPP) avec le Ministère de la Formation professionnelle, pour un coût estimé à 1,18 milliard F CFA par centre (24,3 milliards pour 15 centres).',
       image: cfpt,
       showViewPhotos: true,
       images: [
