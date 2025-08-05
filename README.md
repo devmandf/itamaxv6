@@ -25,7 +25,7 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
     - Un seul filtre principal peut être actif à la fois
     - Le filtre "Projets Études" :
       - S'affiche en bleu foncé (bg-blue-600) lorsqu'actif
-      - Affiche les sous-filtres "Bâtiments institutionnels" et "Immeubles et Villa"
+      - Affiche les sous-filtres "Bâtiments institutionnels" et "Résidences et Villas"
       - Sélectionne automatiquement "Bâtiments institutionnels" par défaut
       - Maintient l'espacement même après fermeture des sous-filtres
     - Les sous-filtres :
@@ -38,6 +38,7 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
   - Bordure bleue subtile
   - Effet de lévitation au survol
   - Ombre portée dynamique
+  - Badges visuels pour les projets multiples (ex: "15+" pour les Centres d'Excellence)
 - Galerie de projets avec aperçu des réalisations
 - Modal de visualisation des détails des projets avec navigation fluide entre images
   - Chargement sans saut de contenu

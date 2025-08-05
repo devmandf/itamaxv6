@@ -276,6 +276,7 @@ const projects = {
       title: 'Extension et réhabilitation d\'hôpitaux au Sénégal dans le cadre du Projet SN 25 financé par LuxDev.',
       category: 'public',
       description: 'En partenariat avec Davila Architecture (Brésil) : Études et Suivi des Travaux du Projet SN 25.',
+      showViewPhotos: true,
       images: [
         '/assets/images/HôpStLouis.webp',
         '/assets/images/HôpPETE.webp',
@@ -638,7 +639,20 @@ const Realisations = () => {
                 />
                 {project.id === 2 && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-8xl font-['Jura'] font-extrabold text-white drop-shadow-xl">15+</span>
+                    <img 
+                      src="/assets/images/15+.webp" 
+                      alt="15+ projets"
+                      className="h-32 w-auto object-contain drop-shadow-lg"
+                    />
+                  </div>
+                )}
+                {project.id === 14 && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <img 
+                      src="/assets/images/3+.webp" 
+                      alt="3+ projets"
+                      className="h-32 w-auto object-contain drop-shadow-lg"
+                    />
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">

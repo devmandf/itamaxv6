@@ -21,6 +21,22 @@ Le déploiement est automatisé via Cloudflare Pages. Chaque push sur la branche
 - **Email** : itamax@orange.sn
 - **Horaires d'ouverture** : Lundi - Vendredi : 8h00 - 17h00
 
+### 🖼️ Badges Visuels des Projets
+
+#### Règles pour les Badges de Comptage
+- **Utilisation** :
+  - Pour les projets contenant plusieurs sous-projets (ex: Centres d'Excellence, Hôpitaux)
+  - Afficher un badge "X+" où X est le nombre minimal de sous-projets
+
+#### Spécifications Techniques
+- **Format** : Image WebP optimisée
+- **Taille** : Environ 128px de hauteur (h-32 en Tailwind)
+- **Positionnement** : Centré sur l'image du projet
+- **Ombre** : drop-shadow-lg pour une bonne visibilité
+- **Exemples** :
+  - "15+.webp" pour les Centres d'Excellence Africains
+  - "3+.webp" pour les projets d'hôpitaux
+
 ### 🖼️ Règles pour la Modale d'Images
 
 #### Comportement du Chargement
