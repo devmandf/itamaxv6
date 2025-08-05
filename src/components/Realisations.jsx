@@ -231,7 +231,7 @@ const projects = {
     },
     {
       id: 4,
-      title: 'Villa Grand Standing à Mbour.',
+      title: 'Villa Grand Standing à Mbour',
       category: 'particulier',
       description: 'Style nord-américain avec hall, plusieurs salons, chambres master, dressing, garages, piscine, gym, salle TV et billard, coût d\'environ 750 millions F CFA.',
       image: villambour,
@@ -367,7 +367,7 @@ const projects = {
     },
     {
       id: 19,
-      title: 'VIP R+3 LOUNGE ALMADIES DAKAR',
+      title: 'VIP R+3 Lounge Almadies, DAKAR',
       category: 'particulier',
       description: 'R+3 VIP Lounge Almadie',
       image: '/assets/images/R+3-VIP-Lounge-Almadie-(01).webp',
@@ -391,14 +391,15 @@ const projects = {
     },
     {
       id: 21,
-      title: 'Villa à Nouakchott Mauritanie',
+      title: 'Villa à Nouakchott, Mauritanie',
       category: 'particulier',
       description: 'Villa Grand Standing',
-      image: '/assets/images/Villa-grand-standing-(06).webp',
+      image: '/assets/images/Villa-grand-standing-(01).webp',
       showViewPhotos: true,
       images: [
-        '/assets/images/Villa-grand-standing-(06).webp',
-        '/assets/images/Villa-grand-standing-(05).webp'
+        '/assets/images/Villa-grand-standing-(01).webp',
+        '/assets/images/Villa-grand-standing-(02).webp',
+        '/assets/images/Villa-grand-standing-(03).webp'
       ],
     },
     {
@@ -635,6 +636,11 @@ const Realisations = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
+                {project.id === 2 && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-8xl font-['Jura'] font-extrabold text-white drop-shadow-xl">15+</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
                   <span className="bg-white/90 text-blue-600 px-4 py-2 rounded-full font-medium shadow-md flex items-center">
                     {project.showViewPhotos ? 'Voir les photos' : (project.images?.length > 1 ? 'Voir les projets' : 'Voir en grand')}
