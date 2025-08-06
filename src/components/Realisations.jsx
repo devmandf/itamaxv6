@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Squares2X2Icon } from '@heroicons/react/24/outline';
 import ImageModal from './ImageModal';
@@ -506,7 +506,24 @@ const Realisations = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSubFilters, setShowSubFilters] = useState(false);
   const [hasShownSubFilters, setHasShownSubFilters] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [portfolioItems, setPortfolioItems] = useState(projects.amo);
+
+  // Détection des appareils mobiles
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Vérifier au chargement
+    checkIfMobile();
+    
+    // Écouter les changements de taille
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Nettoyer l'écouteur d'événement
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -578,7 +595,7 @@ const Realisations = () => {
             <div key={key} className="relative">
               <button
                 onClick={() => handleFilterClick(key)}
-                className={`px-6 py-2 rounded-full font-medium transition-colors border border-gray-200 whitespace-nowrap ${
+                className={`px-6 py-2 rounded-full font-medium transition-colors border border-gray-200 whitespace-nowrap ${isMobile ? 'text-xs' : ''} ${
                   key === 'etudes' && (activeFilter === 'public' || activeFilter === 'particulier')
                     ? 'bg-blue-600 text-white border-blue-600'
                     : activeFilter === key

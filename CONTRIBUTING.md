@@ -278,6 +278,52 @@ Types de commits :
    - S'assurer que les liens sont accessibles au clavier
    - Maintenir un bon contraste entre le logo et l'arrière-plan
 
+### 🖼️ Composant TrustedBy
+
+#### Comportement Responsive
+- **Mobile (< 768px)** :
+  - Grille 2 colonnes
+  - Hauteur des logos : `h-36` (mobile) et `h-44` (tablette)
+  - Padding réduit : `p-1` (mobile) et `p-2` (tablette)
+  - Espacement entre les logos : `gap-2` (mobile) et `gap-3` (tablette)
+
+- **Desktop (≥ 1024px)** :
+  - Défilement continu horizontal
+  - Hauteur des logos : `h-64`
+  - Largeur minimale des conteneurs : `min-width: 400px`
+  - Vitesse de défilement : `0.05` pixels par milliseconde
+
+#### Règles de Développement
+1. **Format des Images** :
+   - Utiliser exclusivement le format WebP pour les logos
+   - Optimiser les images avant de les ajouter au projet
+   - Maintenir un ratio d'aspect cohérent
+
+2. **Performances** :
+   - Utiliser le chargement paresseux (`loading="lazy"`)
+   - Limiter le nombre de répétitions à 6 pour le défilement
+   - Éviter les animations complexes qui pourraient affecter les performances
+
+3. **Accessibilité** :
+   - Toujours inclure un texte alternatif descriptif
+   - S'assurer que les liens sont accessibles au clavier
+   - Maintenir un contraste suffisant
+
+4. **Modifications** :
+   - Ne pas modifier la vitesse de défilement sans raison valable
+   - Tester sur différentes tailles d'écran après chaque modification
+   - Documenter tout changement dans le comportement attendu
+
+#### Fichiers à Modifier avec Précautions
+- `src/components/TrustedBy.jsx`
+- `src/assets/images/` (dossier des logos partenaires)
+
+#### Bonnes Pratiques
+- Toujours prévisualiser les changements sur mobile et desktop
+- Vérifier que les logos restent nets et bien proportionnés
+- S'assurer que les liens sont correctement configurés
+- Maintenir la cohérence visuelle avec le reste du site
+
 4. **Performances** :
    - Optimiser les images avant l'ajout
    - Utiliser le chargement paresseux (lazy loading) pour les images
@@ -356,6 +402,49 @@ src/
   - `sm:` (640px)
   - `md:` (768px)
   - `lg:` (1024px)
+
+## 📱 Détection Mobile et Styles Conditionnels
+
+### Détection d'appareil mobile
+Le site utilise une détection JavaScript pour appliquer des styles spécifiques aux appareils mobiles :
+
+```jsx
+const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkIfMobile = () => {
+    setIsMobile(window.innerWidth < 768); // Mobile: < 768px
+  };
+  
+  checkIfMobile();
+  window.addEventListener('resize', checkIfMobile);
+  return () => window.removeEventListener('resize', checkIfMobile);
+}, []);
+```
+
+### Utilisation des styles conditionnels
+Pour appliquer des styles spécifiques aux mobiles :
+
+```jsx
+// Dans le JSX
+<div className={`base-class ${isMobile ? 'mobile-style' : 'desktop-style'}`}>
+  Contenu
+</div>
+
+// Pour les styles inline
+<div style={{ 
+  fontSize: isMobile ? '14px' : '16px',
+  // autres styles...
+}}>
+  Contenu
+</div>
+```
+
+### Bonnes pratiques
+1. **Toujours utiliser `isMobile`** pour les styles spécifiques aux mobiles
+2. **Éviter les media queries CSS** pour la logique conditionnelle
+3. **Tester sur appareil réel** pour valider le rendu
+4. **Maintenir la cohérence** des tailles de texte sur mobile
   - `xl:` (1280px)
   - `2xl:` (1536px)
 

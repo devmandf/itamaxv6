@@ -15,6 +15,15 @@ Site web officiel d'Itamax, entreprise spécialisée dans la construction, l'arc
 ### 🎨 Interface utilisateur
 - Design responsive et moderne avec une expérience utilisateur optimisée
 - Navigation fluide avec défilement vers les sections
+- Section "Ils nous font confiance" avec carrousel de logos
+  - Version mobile : Grille 2 colonnes avec logos optimisés pour les petits écrans
+  - Version tablette : Même affichage que mobile avec des logos légèrement plus grands
+  - Version desktop : Défilement continu avec des logos deux fois plus grands
+- Détection intelligente des appareils mobiles avec JavaScript
+  - Détection précise des téléphones portables (largeur < 768px)
+  - Application conditionnelle des styles spécifiques aux mobiles
+  - Maintien de la cohérence visuelle sur tous les appareils
+  - Effets de survol subtils avec légère élévation et ombre portée
 - Section Hero avec texte en surimpression lisible
   - Effets de transparence et de flou pour une meilleure intégration
   - Animation douce au chargement de la page
@@ -147,6 +156,26 @@ src/
 ## 🤝 Contribution
 
 Les contributions sont les bienvenues ! Consultez notre [guide de contribution](CONTRIBUTING.md) pour commencer.
+
+### Directives spécifiques pour le composant TrustedBy
+
+#### Comportement attendu
+- **Sur mobile (< 768px)** : Affichage en grille 2 colonnes avec des logos de taille moyenne
+- **Sur tablette (768px - 1023px)** : Même affichage que mobile avec des logos légèrement plus grands
+- **Sur desktop (≥ 1024px)** : Défilement continu avec des logos deux fois plus grands
+
+#### Règles importantes
+- Ne pas modifier la taille des logos dans la version desktop sans ajuster le nombre de répétitions
+- Maintenir le ratio d'aspect des logos lors des redimensionnements
+- Tester sur différentes tailles d'écran après chaque modification
+- Les logos doivent être au format WebP pour des performances optimales
+- La vitesse de défilement doit rester constante (0.05 pixels par milliseconde)
+- Pour les styles conditionnels, utiliser la variable `isMobile` pour cibler spécifiquement les mobiles
+- Toujours tester sur un appareil mobile réel pour valider les changements
+
+#### Fichiers concernés
+- `src/components/TrustedBy.jsx`
+- `src/assets/images/` (dossier contenant les logos des partenaires)
 
 ## 📄 Licence
 

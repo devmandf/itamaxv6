@@ -20,7 +20,7 @@ const TrustedBy = () => {
     },
     {
       name: 'Programme des Nations Unies pour le développement',
-      logo: '/assets/images/pnud-logo-blue.png',
+      logo: '/assets/images/pnud-logo-blue.webp',
       url: 'https://www.undp.org/'
     },
     {
@@ -31,7 +31,7 @@ const TrustedBy = () => {
   ];
 
   const createInfiniteLogos = () => {
-    const repeats = 12;
+    const repeats = 6; // Réduit le nombre de répétitions car les logos sont plus grands
     const result = [];
     for (let i = 0; i < repeats; i++) {
       companies.forEach((company, idx) => {
@@ -91,23 +91,26 @@ const TrustedBy = () => {
           Ils nous font confiance
         </h2>
 
-        <div className="lg:hidden grid grid-cols-2 gap-8 justify-items-center items-center">
+        <div className="lg:hidden grid grid-cols-2 gap-2 sm:gap-3 justify-items-center items-center px-2 sm:px-4">
           {companies.map((company, index) => (
-            <a
-              key={`mobile-${index}`}
-              href={company.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative transition-all duration-300 flex justify-center items-center w-full h-full"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-md opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
-              <img
-                src={company.logo}
-                alt={company.name}
-                className="h-32 sm:h-40 w-auto object-contain transition-all duration-300 transform group-hover:scale-110"
-                loading="lazy"
-              />
-            </a>
+            <div key={`mobile-${index}`} className="w-full">
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block w-full h-full"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-md opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+                <div className="border border-gray-200 rounded-lg p-1 sm:p-2 w-full h-full flex items-center justify-center bg-white">
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="h-36 sm:h-44 w-auto object-contain p-1"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
           ))}
         </div>
 
@@ -120,21 +123,24 @@ const TrustedBy = () => {
             style={{ width: 'max-content', willChange: 'transform' }}
           >
             {infiniteLogos.map((company, index) => (
-              <a
-                key={company.id || `desktop-${index}`}
-                href={company.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 mx-12 transition-transform duration-300 hover:scale-110"
-              >
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className="h-32 w-auto object-contain"
-                  style={{ minWidth: '220px' }}
-                  loading="lazy"
-                />
-              </a>
+              <div key={company.id || `desktop-${index}`} className="mx-4">
+                <a
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  <div className="border border-gray-200 rounded-lg p-4 bg-white hover:shadow-md transition-all duration-300">
+                    <img
+                      src={company.logo}
+                      alt={company.name}
+                      className="h-64 w-auto object-contain"
+                      style={{ minWidth: '400px' }}
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+              </div>
             ))}
           </div>
         </div>
